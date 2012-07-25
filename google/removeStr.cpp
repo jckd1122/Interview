@@ -27,7 +27,8 @@ void remove(char* str1,char* str2){
     }
     s = str2;
 
-    
+
+
     do{
         char* pos = p;
         while(*p  == *s){
