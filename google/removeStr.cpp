@@ -11,6 +11,9 @@ void swap(char* p, char* q){
 	*p = *q;
 	*q = tmp;
 }
+    
+
+
 
 
 void remove(char* str1,char* str2){
@@ -24,17 +27,19 @@ void remove(char* str1,char* str2){
     }
     s = str2;
 
-	do{
-    	char* pos = p;
-	    while(*p  == *s){
-	    	p++;
-        	s++;
-			if(p-pos == size){
-				pos = p;
-				s = str2;
-			}
-		}
-       	if(p-pos < size){
+    
+    do{
+        char* pos = p;
+        while(*p  == *s){
+
+            p++;
+            s++;
+            if(p-pos == size){
+                pos = p;
+                s = str2;
+		    }
+        }
+        if(p-pos < size){
             p = pos;
 		}
         
