@@ -21,19 +21,27 @@ void remove(char* str1,char* str2){
     do{
         char* pos = p;
 	    while(*p  == *s){
+			
             p++;
             s++;
+			if(p-pos == 3){
+				pos = p;
+				s = str2;
+			}
+			
         }
-        if(p-pos < 3){
+       	if(p-pos < 3){
             p = pos;
+				
         }
-        s = str2;
+		s = str2;
+        
     }while(*q++ = *p++);
 	
 }
 
 int main(){
-	char str1[] = "sheshmsheshem";
+	char str1[] = "skjthshetheshetesm";
 	char str2[] = "she";
 	remove(str1,str2);
 	printf("%s\n",str1);
