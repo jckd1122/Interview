@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+	
 //?? still have issue
 void swap(char* p, char* q){
 	char tmp = *p;
@@ -17,6 +18,7 @@ void remove(char* str1,char* str2){
 	char* q = str1;
 	char* s = str2;
 	
+        
 	do{
     	char* pos = p;
 	    while(*p  == *s){
