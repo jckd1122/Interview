@@ -21,9 +21,8 @@ void remove(char* str1,char* str2){
     do{
         char* pos = p;
 	    while(*p  == *s){
-			
-            p++;
-            s++;
+			p++;
+        	s++;
 			if(p-pos == 3){
 				pos = p;
 				s = str2;
@@ -36,7 +35,7 @@ void remove(char* str1,char* str2){
         }
 		s = str2;
         
-    }while(*q++ = *p++);
+     }while(*q++ = *p++);
 	
 }
 
