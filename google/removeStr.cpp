@@ -37,7 +37,7 @@ void remove(char* str1,char* str2){
             if(p-pos == size){
                 pos = p;
                 s = str2;
-		    }
+            }
         }
         if(p-pos < size){
             p = pos;
