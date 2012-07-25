@@ -33,7 +33,7 @@ void remove(char* str1,char* str2){
             p = pos;
 				
         }
-	 s = str2;
+	s = str2;
         
      }while(*q++ = *p++);
 	
