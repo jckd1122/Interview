@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-//still have issue
+// still have issue
 void swap(char* p, char* q){
 	char tmp = *p;
 	*p = *q;
