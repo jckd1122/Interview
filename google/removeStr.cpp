@@ -17,19 +17,24 @@ void remove(char* str1,char* str2){
 	char* p = str1;
 	char* q = str1;
 	char* s = str2;
-	
-        
+	int size = 0;
+
+    while(*s++ != '\0'){
+        size++;
+    }
+    s = str2;
+
 	do{
     	char* pos = p;
 	    while(*p  == *s){
 	    	p++;
         	s++;
-			if(p-pos == 3){
+			if(p-pos == size){
 				pos = p;
 				s = str2;
 			}
 		}
-       	if(p-pos < 3){
+       	if(p-pos < size){
             p = pos;
 		}
         
