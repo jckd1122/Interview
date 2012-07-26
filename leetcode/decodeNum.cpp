@@ -29,6 +29,8 @@ public:
                 arr[i] =  1;
             else if(v >= 11 && v <= 26)
                 arr[i] = 2;
+            else if(s[i] == 0)
+                arr[i] = arr[i-2];
             else
                 arr[i] = arr[i-2]+arr[i-1];
         }
