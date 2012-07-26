@@ -14,19 +14,18 @@ public:
         int l = s.length();
         int* arr = new int[l];
         is >> v;
+        cout << v << endl;
         
         arr[0] = 1;
-        if(l == 1)
-            return arr[0];
 
         for(int i = 1; i < l; ++i){
             if(v == 10 || v == 20)
                 arr[i] =  arr[i-1];
-            if(v >= 27 && v <=99 && v %10 == 0)
+            else if(v >= 27 && v <=99 && v %10 == 0)
                 arr[i] = 0;
-            if(v >= 27 && v <= 99 && v %10 != 0)
-                arr[i] =  arr[i-1];
-            if(v >= 11 && v <= 26)
+            else if(v >= 27 && v <= 99 && v %10 != 0)
+                arr[i] =  1;
+            else if(v >= 11 && v <= 26)
                 arr[i] = 2;
             else
                 arr[i] = arr[i-2]+arr[i-1];
@@ -39,6 +38,6 @@ public:
 
 int main(){
  solution sol;
- cout << sol.cal("123") << endl;
+ cout << sol.cal("112") << endl;
 
 }
