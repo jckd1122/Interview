@@ -16,6 +16,7 @@ void swap(char* p, char* q){
 
 
 
+
 void remove(char* str1,char* str2){
 	char* p = str1;
 	char* q = str1;
