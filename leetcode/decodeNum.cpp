@@ -1,0 +1,10 @@
+
+
+
+
+int cal(int number){
+    
+
+
+
+}
