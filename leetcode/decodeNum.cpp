@@ -9,16 +9,18 @@ using namespace std;
 class solution{
 public:
     int cal(string s){
-        istringstream is(s);
+        //istringstream is(s);
         int v = 0;
         int l = s.length();
-        int* arr = new int[l];
-        is >> v;
-        cout << v << endl;
+        int* arr = new int[20];
+        //is >> v;
+        //cout << v << endl;
         
         arr[0] = 1;
 
         for(int i = 1; i < l; ++i){
+            istringstream is(s.substr(0,i+1));
+            is >> v;
             if(v == 10 || v == 20)
                 arr[i] =  arr[i-1];
             else if(v >= 27 && v <=99 && v %10 == 0)
@@ -31,6 +33,9 @@ public:
                 arr[i] = arr[i-2]+arr[i-1];
         }
 
+        for(int i = 0; i < l;++i)
+            cout << arr[i] << endl;
+        cout << " " << endl;
         return arr[l-1];
     }
 };
