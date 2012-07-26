@@ -9,12 +9,9 @@ using namespace std;
 class solution{
 public:
     int cal(string s){
-        //istringstream is(s);
         int v = 0;
         int l = s.length();
         int* arr = new int[20];
-        //is >> v;
-        //cout << v << endl;
         
         arr[0] = 1;
         if(s[0] == '0' || s == "")
@@ -52,7 +49,7 @@ public:
 
 
 int main(){
- solution sol;
- cout << sol.cal("112") << endl;
+    solution sol;
+    cout << sol.cal("112") << endl;
 
 }
