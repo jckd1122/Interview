@@ -16,6 +16,7 @@ public:
         arr[0] = 1;
         if(s[0] == '0' || s == "")
             return 0;
+        
 
         for(int i = 1; i < l; ++i){
             istringstream is1(s.substr(0,i+1));
