@@ -1,6 +1,5 @@
 
 
-
 public class mostWater{
 	
 	
@@ -11,8 +10,8 @@ public class mostWater{
 		int areaMax = 0;
 		for(int i = 0; i < height.length;++i){
 			for(int j = i+1; j < height.length;++j){
-				length = j-1;
-				width = (height[j] > hight[i])? height[i]:height[j];
+				length = j-i;
+				width = (height[j] > height[i])? height[i]:height[j];
 				area = length*width;
 				if(area > areaMax)
 					areaMax = area;
