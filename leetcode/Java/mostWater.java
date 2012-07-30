@@ -34,7 +34,7 @@ public class mostWater{
 				width = (height[l+1] > height[r])? height[l+1]:height[r];
 				area = (r-l-1)*width;
 				if(area > areaMax)
-                    		    areaMax = area;
+                    areaMax = area;
 				l++;
 			}
 			else{
@@ -42,7 +42,7 @@ public class mostWater{
 				area = (r-l-1)*width;
 				areaMax = Math.max(areaMax, area);
 				if(area > areaMax)
-                                   areaMax = area;
+                    areaMax = area;
 				r--;
 			}
 		}
