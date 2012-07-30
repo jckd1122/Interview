@@ -1,4 +1,3 @@
-
 public class mostWater{
 	
 	
@@ -28,20 +27,22 @@ public class mostWater{
 		int length = 0;
 		int width = 0;
 		int area = 0;
-		int areaMax = (height.length-1)*Math.min(height[l], height[r]); 
-		int l = 0;
-		int r = height.length-1;
+		width = (height[l] > height[r])? height[r]:height[l];
+		int areaMax = (height.length-1)*width;
 		while(l < r){
 			if(height[l] <= height[r]){
 				width = (height[l+1] > height[r])? height[l+1]:height[r];
 				area = (r-l-1)*width;
-				areaMax = Math.max(areaMax, area);
+				if(area > areaMax)
+                    		    areaMax = area;
 				l++;
 			}
 			else{
 				width = (height[l] > height[r-1])? height[r-1]:height[l];
 				area = (r-l-1)*width;
 				areaMax = Math.max(areaMax, area);
+				if(area > areaMax)
+                                   areaMax = area;
 				r--;
 			}
 		}
@@ -49,11 +50,5 @@ public class mostWater{
 	}
 	
 	
-	public static int maxArea3(int[] height){
-		int[] arr = new int[height.length];
-		//hashtable?
-		for(int i = 0; i < height.length;++i){
-			
-		}
-	}
+	
 }
