@@ -15,6 +15,7 @@ public class Solution {
             return parentSet;
         }
         else{
+            parentSet = generateHelper(n-1,parentSet);
             for(int i = 0; i < parentSet.size();++i){
                 String ele = parentSet.get(i);
                 if(!parentSet.contains(ele+"()"))
