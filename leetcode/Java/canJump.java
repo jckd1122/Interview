@@ -1,14 +1,23 @@
-import java.util.BitSet; 
+import java.util.Stack;
+
 public class canJump(){
 
     public boolean can(int[] A){
-        BitSet bits = new BitSet(A.length-1);
-        for(int i = 0; i < A.length-1;++i){
-            if(A[i] >= length-1-i)
-                bits.set(i);
+        Stack<Integer> s = new Stack<Integer>();
+        for(int i = 1; i <= a[0];++i){
+            s.push(i);
         }
-        return bits == true;
-
+        while(!s.empty()){
+            int pos = s.pop();
+            if(pos == A.length-1)
+                return true;
+            else{
+                for(int i = 1; i <= a[pos]; ++i){
+                    s.push(pos+i);
+                }
+            }
+        }
+        return false;
     }
 
 
