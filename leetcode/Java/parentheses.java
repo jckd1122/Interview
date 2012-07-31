@@ -30,26 +30,31 @@ public class Solution {
         }
     }
 
-    public void generateHelper(int n,int left,int right,ArrayList<String> parentSet,String printOut){
+   
+
+
+    public ArrayList<String> generateParenthesis2(int n) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        ArrayList<String> list = new ArrayList<String>();
+        return generateHelper2(n,0,0,list,"");
+
+    }
+    
+    public void generateHelper2(int n,int left,int right,ArrayList<String> parentSet,String printOut){
         if(left == n && right == n)
             parentSet.add(printOut);
         else{
             if(left < n){
-                generateHelper(n,left+1,right,parentSet,printOut+"(");
+                generateHelper2(n,left+1,right,parentSet,printOut+"(");
             }
             if(left > right){
-                generateHelper(n,left,right+1,parentSet,printOut+")");
+                generateHelper2(n,left,right+1,parentSet,printOut+")");
             }
         }
 
     }
 
-
-    public ArrayList<String> generateParenthesis2(int n) {
-        ArrayList<String> list = new ArrayList<String>();
-        return generateHelper2(n,list);
-
-    }
 
 
 }
