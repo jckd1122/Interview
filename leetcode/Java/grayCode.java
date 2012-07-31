@@ -6,12 +6,9 @@ public class grayCode{
         list.add(0);
         
         for(int i = 1; i <= n;++i){
-            int index = list.size()-1;
-            for(int j = 1; j <= Math.pow(2.0,(double)i-1);++j){
-                int num = list.get(index);
-                double newNum = num+Math.pow(2.0,(double)i-1);
-                list.add((int)newNum);
-                index--;
+            for(int j = 1; j <= list.size();++j){
+                int num = list.get(list.size()-j);
+                list.add(num+list.size());
             }
         }
         return list; 
