@@ -4,7 +4,7 @@ public class canJump(){
 
     public boolean can(int[] A){
         Stack<Integer> s = new Stack<Integer>();
-        for(int i = 1; i <= a[0];++i){
+        for(int i = 1; i <= A[0];++i){
             s.push(i);
         }
         while(!s.empty()){
@@ -12,7 +12,7 @@ public class canJump(){
             if(pos == A.length-1)
                 return true;
             else{
-                for(int i = 1; i <= a[pos]; ++i){
+                for(int i = 1; i <= A[pos]; ++i){
                     s.push(pos+i);
                 }
             }
