@@ -53,12 +53,13 @@ public class canJump(){
         for(int i = 0; i < n;++i){
             int pos = i+A[i];
             if(pos > furthest)
-                furthest = tmp;
+                furthest = pos;
             if(furthest >= n-1)
                 return true;
             if(furthest == i)
                 return false;
          }
+         return true;      //actually don't need to return any case, but in Java it requires a return value outside the loop
 
     }
 
