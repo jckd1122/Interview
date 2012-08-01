@@ -47,5 +47,20 @@ public class canJump(){
         return true;
     }
 
+    Public boolean can3(int[] A){
+        int furthest = 0;
+        int n = A.length;
+        for(int i = 0; i < n;++i){
+            int pos = i+A[i];
+            if(pos > furthest)
+                furthest = tmp;
+            if(furthest >= n-1)
+                return true;
+            if(furthest == i)
+                return false;
+         }
+
+    }
+
 
 }
