@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class canJump(){
 
-    public boolean can(int[] A){
+    public boolean can1(int[] A){
         if(A.length == 1)
             return true;
             
@@ -22,5 +22,29 @@ public class canJump(){
         }
         return false;
     }
+
+
+    Public boolean can2(int[] A){
+        int n = A.length;
+        if(n == 1)
+            return true;
+        if(A[0] == 0)
+            return false;
+
+        for(int i = 1; i <= n-1;++i){
+            if(A[i] != 0)
+                continue;
+            for(int j = 0,int step = i; j < i;j++,step--){
+                if(A[j] > step)
+                    break;
+                else if(j <= i-1)
+                    continue;
+                else
+                    return false;
+            }
+        }
+        return true;
+    }
+
 
 }
