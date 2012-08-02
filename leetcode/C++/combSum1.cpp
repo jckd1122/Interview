@@ -15,7 +15,7 @@ public:
             list.push_back(ele);
         }
             
-        if(index > 0 && sum < target)
+        if(index > 0)
             index--;
 
         for(int i = index; i < candidates.size;++i){
