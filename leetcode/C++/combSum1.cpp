@@ -18,7 +18,7 @@ public:
         if(index > 0)
             index--;
 
-        for(int i = index; i < candidates.size;++i){
+        for(int i = index; i < candidates.size();++i){
             ele.push_back(candidates[i]);
             combHelper(index+1,sum+candidates[i],target,candidates,ele,list);
             ele.pop_back();
