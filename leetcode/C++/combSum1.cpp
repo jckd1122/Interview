@@ -19,7 +19,7 @@ public:
 
         for(int i = pos; i < candidates.size();++i){
             ele.push_back(candidates[i]);
-            combHelper(pos,sum+candidates[i],target,candidates,ele,list);
+            combHelper(i,sum+candidates[i],target,candidates,ele,list);
             ele.pop_back();
         }
 
