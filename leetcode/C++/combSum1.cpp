@@ -1,8 +1,11 @@
+#include <algorithm>
+
 class Solution{
 public:
     vector<vector<int> > combinationSum(vector<int> &candidates, int target) {
         vector<vector<int> > list;
         vector<int> ele;
+        sort(candidates.begin(),candidates.end());
         combHelper(0,0,target,candidates,ele,list);
         return list;
 
