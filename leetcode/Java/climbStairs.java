@@ -9,7 +9,6 @@ public class climbStairs{
 
     //DP Top down
     public int climbStairs2(int n){
-        int[] arr = new int[n+1];
         if( n < 3)
             arr[n] = n;
         arr[n] = climbStairs2(n-1)+climbStairs2(n-2);
