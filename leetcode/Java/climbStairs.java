@@ -1,8 +1,8 @@
 public class climbStairs{
-    public int climb(int n){
+    public int climbStairs(int n){
         if (n < 3)
             return n;
-        return climb(n-1)+climb(n-2);
+        return climbStairs(n-1)+climbStairs(n-2);
     }
 
 
