@@ -12,7 +12,7 @@ public class climbStairs{
         int[] arr = new int[n+1];
         if( n < 3)
             arr[n] = n;
-        arr[n] = climbStairs(n-1)+climbStairs2(n-2);
+        arr[n] = climbStairs2(n-1)+climbStairs2(n-2);
         return arr[n];
     }
 
