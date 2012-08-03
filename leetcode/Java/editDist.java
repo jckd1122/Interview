@@ -22,7 +22,7 @@ public class Solution {
                     repl = 0;
                 else
                     repl = 1;
-                dist[i][j] = min(dist[i-1][j]+1,dist[i][j-1]+1,dist[i][j]+repl);
+                dist[i][j] = min(dist[i-1][j]+1,dist[i][j-1]+1,dist[i-1][j-1]+repl);
 
             }
 
