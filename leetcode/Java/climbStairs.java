@@ -18,9 +18,9 @@ public class climbStairs{
     }
     
     //DP bottom up
-    public int climbStairs(int n){
+    public int climbStairs3(int n){
         if(n == 0)
-            return 0
+            return 0;
         int temp1 = 0;
         int temp2 = 1;
         for(int i = 1; i <= n;++i){
