@@ -11,7 +11,7 @@ public class climbStairs{
     public int climbStairs2(int n){
         if( n < 3)
             arr[n] = n;
-        arr[n] = climbStairs(n-1)imbStairs2[n-2];
+        arr[n] = climbStairs(n-1)+climbStairs2(n-2);
         return arr[n];
     }
 
