@@ -8,27 +8,8 @@ public class combSum{
         
         int sum = 0;
         int i = 0;
-        while(i < candiates.length){
-            ele.add(candidates[i]);
-            sum += candidates[i];
-            if(sum > target){
-                ele.remove(ele.size()-1);
-                ++i;
-                continue;
-            }
-            if(sum+candidates[i] > target){
-                ++i;
-                continue;
-            }
-            if(sum+candidates[i] == target){
-                ele.add(candidates[i]);
-                list.add(ele);
-                ele.remove(ele.size()-1);
-                ++i;
-                break;
-            }
             
-        }
+        
 
 
 
