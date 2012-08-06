@@ -43,19 +43,17 @@ public class Solution {
         }
 
         int start,end;
-        if(hInRange && tInRange){
-            start = intervals.get(hIndex).start;
-            end = intervals.get(tIndex).end;
+        if(hInRange == true && tInRange == true){
             intervals.subList(hIndex,tIndex+1).clear();
-            intervals.add(new Interval(start,end));
+            intervals.add(new Interval(newInterval.start,newInterval.end));
         }
-        else if(hInRange && tInRange == false ){
+        else if(hInRange == true && tInRange == false ){
             start = intervals.get(hIndex).start;
             intervals.subList(hIndex,tIndex+1).clear();
             intervals.add(new Interval(start,newInterval.end));
         }
 
-        else if(hInRange == false && tInRange){
+        else if(hInRange == false && tInRange == true){
             end = intervals.get(tIndex).end;
             intervals.subList(hIndex+1,tIndex+1).clear();
             intervals.add(new Interval(newInterval.start,end));
