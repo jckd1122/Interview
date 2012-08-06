@@ -3,7 +3,7 @@
 
 public class canJump2{
 
-    public int minJump(int[] A){
+    public static int minJump(int[] A){
         int length = A.length;
         int[] table = new int[length-1];
         table[length-2] = (A[length-2] > 0)? 1:0;
@@ -13,8 +13,8 @@ public class canJump2{
             else if(A[i]+i >= length-1)
                 table[i] = 1;
             else{
-                int jump = 0;
-                for(int j = i+1; j <= A[i]+i;++j){
+                int jump = 1+table[i+1];
+                for(int j = i+2; j <= A[i]+i;++j){
                     if(jump > 1+table[j])
                         jump = 1+table[j];
                 }
@@ -24,6 +24,11 @@ public class canJump2{
         return table[0];
     }
 
+    public static void main(String[] args){
+        int[] A = {2,3,1,1,4};
+        System.out.println(minJump(A));
 
+
+    }
 
 }
