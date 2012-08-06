@@ -9,9 +9,9 @@ public class minSumPath{
         int[][] table = new int[m][n];
         table[0][0] = grid[0][0];
         for(int j = 1; j < n-1;++j)
-            table[0][j] += table[0][j-1]+grid[0][j];
+            table[0][j] == table[0][j-1]+grid[0][j];
         for(int i = 1; i < m-1;++i)
-            table[i][0] += table[i-1][0]+grid[i][0];
+            table[i][0] == table[i-1][0]+grid[i][0];
 
         for(int i = 1; i < m-1;++i){
             for(int j = 1; j < n-1;++j){
