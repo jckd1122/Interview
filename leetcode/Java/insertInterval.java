@@ -1,9 +1,19 @@
-import java.util.*;
-
-public class insertInterval{
-    public ArrayList<Interval>  insert(ArrayList<Interval> intervals, Interval newInterval){
-        boolean hInRange,tInRange;
-        int hIndex,tIndex;
+/**
+ * Definition for an interval.
+ * public class Interval {
+ *     int start;
+ *     int end;
+ *     Interval() { start = 0; end = 0; }
+ *     Interval(int s, int e) { start = s; end = e; }
+ * }
+ */
+ import java.util.*;
+public class Solution {
+     public ArrayList<Interval>  insert(ArrayList<Interval> intervals, Interval newInterval){
+        boolean hInRange = false;
+        boolean tInRange = false;
+        int hIndex = 0;
+        int tIndex = 0;
         for(int i = 0; i < intervals.size();++i){
             if(intervals.get(i).start <= newInterval.start && intervals.get(i).end >= newInterval.start){
                 hInRange = true;
@@ -36,31 +46,26 @@ public class insertInterval{
         if(hInRange && tInRange){
             start = intervals.get(hIndex).start;
             end = intervals.get(tIndex).end;
-            intervals.removeRange(hIndex,tIndex+1);
+            intervals.subList(hIndex,tIndex+1).clear();
             intervals.add(new Interval(start,end));
         }
         else if(hInRange && tInRange == false ){
             start = intervals.get(hIndex).start;
-            intervals.removeRange(hIndex,tIndex+1);
+            intervals.subList(hIndex,tIndex+1).clear();
             intervals.add(new Interval(start,newInterval.end));
         }
 
         else if(hInRange == false && tInRange){
             end = intervals.get(tIndex).end;
-            intervals.removeRange(hIndex+1,tIndex+1);
+            intervals.subList(hIndex+1,tIndex+1).clear();
             intervals.add(new Interval(newInterval.start,end));
         }
         else{
-            intervals.removeRange(hIndex+1,tIndex+1);
+            intervals.subList(hIndex+1,tIndex+1).clear();
             intervals.add(new Interval(newInterval.start,newInterval.end));
         }
 
         return intervals;
 
     }
-
-
-
-
-
 }
