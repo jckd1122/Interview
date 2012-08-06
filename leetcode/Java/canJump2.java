@@ -24,11 +24,8 @@ public class canJump2{
         return table[0];
     }
 
-    public static void main(String[] args){
-        int[] A = {3,0,2,0,3};
-        System.out.println(minJump(A));
 
 
-    }
+    
 
 }
