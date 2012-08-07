@@ -45,22 +45,24 @@ public class Solution {
         int start,end;
         if(hInRange == true && tInRange == true){
             intervals.subList(hIndex,tIndex+1).clear();
-            intervals.add(new Interval(newInterval.start,newInterval.end));
+            intervals.add(hIndex,new Interval(newInterval.start,newInterval.end));
         }
         else if(hInRange == true && tInRange == false ){
             start = intervals.get(hIndex).start;
             intervals.subList(hIndex,tIndex+1).clear();
-            intervals.add(new Interval(start,newInterval.end));
+            intervals.add(hIndex,new Interval(start,newInterval.end));
         }
 
         else if(hInRange == false && tInRange == true){
             end = intervals.get(tIndex).end;
             intervals.subList(hIndex+1,tIndex+1).clear();
-            intervals.add(new Interval(newInterval.start,end));
+            intervals.add(hIndex+1,new Interval(newInterval.start,end));
         }
         else{
             intervals.subList(hIndex+1,tIndex+1).clear();
-            intervals.add(new Interval(newInterval.start,newInterval.end));
+            if(hIndex == 0)
+                hIndex = -1;              
+            intervals.add(hIndex+1,new Interval(newInterval.start,newInterval.end));
         }
 
         return intervals;
