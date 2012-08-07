@@ -2,7 +2,24 @@ import java.lang.String;
 import java.lang.Math;
 
 public class LCS{
-    public static int lcs(String s1,String s2){
+    public static int lcs2(String s1,String s2,int m,int n,int[][] table){
+        if(m == 0 || n == 0)
+            return 0;
+        
+        int result = 0;
+        if(table[m][n] != -1)  return table[m][n];
+        if(s1.charAt(m-1) == s2.charAt(n-1)){
+            result = 1+lcs2(s1,s2,m-1,n-1,table);
+        }
+        else{
+            result = Math.max(lcs2(s1,s2,m-1,n,table),lcs2(s1,s2,m,n-1,table));
+        }
+        table[m][n] = result;
+        return table[m][n];
+        
+    }
+
+    public static int lcs1(String s1,String s2){
         int m = s1.length();
         int n = s2.length();
         int[][] table = new int[m+1][n+1];
@@ -62,9 +79,16 @@ public class LCS{
     }
 
     public static void main(String[] args){
+        int[][] table = new int[27][27];
+        for(int i = 0; i < 27;++i){
+            for(int j = 0; j < 27;++j){
+                table[i][j] = -1;
+            }
+        }
+
         String s1 = "abcdefghijklmnzyxwvutsrqpo";
         String s2 = "opqrstuvwxyzabcdefghijklmn";
-        System.out.println(lcs(s1,s2));
+        System.out.println(lcs2(s1,s2,26,26,table));
 
     }
 
