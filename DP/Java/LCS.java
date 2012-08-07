@@ -1,6 +1,9 @@
 import java.lang.String;
 import java.lang.Math;
 
+/*pay attention to the indice, since it is accessing from i to i-1, it is recommended
+  to add one more row and column to make it more clear
+*/
 public class LCS{
     public static int lcs2(String s1,String s2,int m,int n,int[][] table){
         if(m == 0 || n == 0)
