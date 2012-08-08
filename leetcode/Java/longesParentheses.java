@@ -22,9 +22,9 @@ public class longestParentheses{
                 if(stack.empty())
                     curEnd = curEnd+prevEnd;
                 else
-                    curEnd = max(curEnd,prevEnd);
+                    curEnd = Math.max(curEnd,prevEnd);
             }
-            maxSoFar = max(max(curEnd,prevEnd),maxSoFar);
+            maxSoFar = Math.max(Math.max(curEnd,prevEnd),maxSoFar);
 
         }
         return maxSoFar;
