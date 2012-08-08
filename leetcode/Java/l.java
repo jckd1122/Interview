@@ -10,10 +10,9 @@ public class l {
         Stack<Character> stack = new Stack<Character>();
         if(n == 0) return 0;
         for(int i = 0; i < n;++i){
+            prevEnd = (curEnd == 0)? 0:curEnd;
             if(s.charAt(i) == '('){
-                prevEnd = curEnd;
-                if(i >= 1)
-                    curEnd = (s.charAt(i-1) == '(')? curEnd:0;
+                curEnd = 0;
                 stack.push('(');
             } 
             else{
@@ -35,9 +34,9 @@ public class l {
      }
 
 
-     public static void main(String[] agrs){
-        String s = ")(((((()())()()))()(()))(";
-        System.out.println(longestValidParentheses(s));
+    // public static void main(String[] agrs){
+    //    String s = "(()())";
+    //    System.out.println(longestValidParentheses(s));
 
-    }
+    //}
 }
