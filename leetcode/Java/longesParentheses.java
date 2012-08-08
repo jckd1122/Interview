@@ -18,7 +18,7 @@ public class longestParentheses{
             }
             else{
                 stack.pop();
-                curEnd++;
+                curEnd = curEnd+2;
                 if(stack.empty())
                     curEnd = curEnd+prevEnd;
                 else
