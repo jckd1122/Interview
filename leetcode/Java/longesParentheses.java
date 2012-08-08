@@ -16,13 +16,13 @@ public class Solution {
                 stack.push('(');
             }
             else{
-                if(stack.empty())
-                    curEnd = curEnd+prevEnd;
-                else{
+                
                     stack.pop();
                     curEnd = curEnd+2;
+                    if(stack.empty())
+                         curEnd = curEnd+prevEnd;
                     curEnd = Math.max(curEnd,prevEnd);
-                }
+                
             }
             maxSoFar = Math.max(Math.max(curEnd,prevEnd),maxSoFar);
 
