@@ -12,7 +12,8 @@ public class Solution {
         for(int i = 0; i < n;++i){
             if(s.charAt(i) == '('){
                 prevEnd = curEnd;
-                curEnd = (s.charAt(i-1) == '(')? curEnd;:0;
+                if(i >=1)
+                    curEnd = (s.charAt(i-1) == '(')?  curEnd:0;
                 stack.clear();
                 stack.push('(');
             }
