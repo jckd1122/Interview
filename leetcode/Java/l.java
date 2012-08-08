@@ -12,16 +12,12 @@ public class l {
         for(int i = 0; i < n;++i){
             if(s.charAt(i) == '('){
                 prevEnd = curEnd;
-                if(i >=1){
-                    if(s.charAt(i-1) != '('){
-                        curEnd = 0;
-                        stack.clear();
-                    }
-                }
-
+                if(i >= 1)
+                    curEnd = (s.charAt(i-1) == '(')? curEnd:0;
                 stack.push('(');
             } 
             else{
+                 prevEnd = curEnd;
                 if(!stack.empty()){
                     stack.pop();
                     curEnd = curEnd+2;
@@ -29,8 +25,9 @@ public class l {
                 }
                 if(stack.empty())
                     curEnd = curEnd+prevEnd;
-                curEnd = Math.max(curEnd,prevEnd);
-            }
+            }    
+            curEnd = Math.max(curEnd,prevEnd);
+            
             maxSoFar = Math.max(curEnd,maxSoFar);
         
         }
