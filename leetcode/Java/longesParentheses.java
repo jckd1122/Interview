@@ -10,11 +10,11 @@ public class longestParentheses{
         Stack<Character> stack = new Stack<Character>();
         if(n == 0) return 0;
         for(int i = 0; i < n;++i){
-            if(s.charAt(i) == '{'){
+            if(s.charAt(i) == '('{
                 prevEnd = curEnd;
                 curEnd = 0;
                 stack.clear();
-                stack.push('{');
+                stack.push('(');
             }
             else{
                 stack.pop();
