@@ -1,8 +1,8 @@
 import java.lang.Math;
 import java.util.Stack;
 
-public class longestParentheses{
-    public int longestValidParentheses(String s){
+public class Solution {
+     public int longestValidParentheses(String s){
         int n = s.length();
         int maxSoFar = 0;
         int prevEnd = 0;
@@ -17,12 +17,13 @@ public class longestParentheses{
                 stack.push('(');
             }
             else{
-                stack.pop();
-                curEnd = curEnd+2;
                 if(stack.empty())
                     curEnd = curEnd+prevEnd;
-                else
+                else{
+                    stack.pop();
+                    curEnd = curEnd+2;
                     curEnd = Math.max(curEnd,prevEnd);
+                }
             }
             maxSoFar = Math.max(Math.max(curEnd,prevEnd),maxSoFar);
 
@@ -32,6 +33,4 @@ public class longestParentheses{
 
 
     }
-
-
 }
