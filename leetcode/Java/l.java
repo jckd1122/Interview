@@ -17,17 +17,17 @@ public class l {
                 stack.push('(');
             } 
             else{
-                 prevEnd = curEnd;
                 if(!stack.empty()){
                     stack.pop();
                     curEnd = curEnd+2;
-                    System.out.println("test "+curEnd);
+                    //System.out.println("test "+curEnd);
                 }
-                if(stack.empty())
-                    curEnd = curEnd+prevEnd;
+                //if(stack.empty())
+                //    curEnd = curEnd+prevEnd;
             }    
             curEnd = Math.max(curEnd,prevEnd);
             
+            System.out.println("test "+curEnd);
             maxSoFar = Math.max(curEnd,maxSoFar);
         
         }
@@ -36,7 +36,7 @@ public class l {
 
 
      public static void main(String[] agrs){
-        String s = "()(())";
+        String s = ")(((((()())()()))()(()))(";
         System.out.println(longestValidParentheses(s));
 
     }
