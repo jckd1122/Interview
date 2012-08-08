@@ -22,7 +22,7 @@ public class longestParentheses{
                 if(stack.empty())
                     curEnd = curEnd+prevEnd;
                 else
-                    current = max(curEnd,prevEnd);
+                    curEnd = max(curEnd,prevEnd);
             }
             maxSoFar = max(max(curEnd,prevEnd),maxSoFar);
 
