@@ -12,17 +12,18 @@ public class Solution {
         for(int i = 0; i < n;++i){
             if(s.charAt(i) == '('){
                 prevEnd = curEnd;
+                curEnd = 0;
                 stack.clear();
                 stack.push('(');
             }
             else{
-                
+                if(!stack.empty()){
                     stack.pop();
                     curEnd = curEnd+2;
-                    if(stack.empty())
-                         curEnd = curEnd+prevEnd;
-                    curEnd = Math.max(curEnd,prevEnd);
-                
+                }
+                if(stack.empty())
+                    curEnd = curEnd+prevEnd;
+                curEnd = Math.max(curEnd,prevEnd);
             }
             maxSoFar = Math.max(Math.max(curEnd,prevEnd),maxSoFar);
 
