@@ -21,7 +21,7 @@ public class l{
                     curEnd = curEnd+prevEnd;
                 else{
                     stack.pop();
-                    curEnd++;
+                    curEnd =curEnd+2;
                     curEnd = Math.max(curEnd,prevEnd);
                 }
             }
