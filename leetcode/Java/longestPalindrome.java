@@ -10,11 +10,12 @@ public class Solution{
         int q = 0;
         int l = 0;
         for(int i = 0; i < n;++i){
-            start = i;
             end = n-1;
+            start = i;
+            
             while(true){
                 if(start > end){
-                    end = start+end-i;
+                    end = end+l;
                     start = i;
                     break;
                 }
@@ -24,19 +25,20 @@ public class Solution{
                     
                     start++;
                     end--;
-                    continue;
+                    l++;
+                
                 }
                 else{
-                    if(end - start > 1)
-                        end--;
-                    else
-                        break;
+                    start = i;
+                    end = l+end-1;
+                    l = 0;
+                    
                     //q = end;
                     
                 }
 
             }
-            if(end-start+1 > q-p+1){
+            if(end-start >= q-p){
                 p = start;
                 q = end;
             }
