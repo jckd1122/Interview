@@ -10,29 +10,24 @@ public class Solution{
             for(int j = i+1; j < n;++j){
                 if(ifPalindrome(s.substring(i,j+1))){
                     while(j < n){
-                        if(2*j < n && ifPalindrome(s.substring(i,2*j))){
-                            j = 2*j;
-                            continue;
-                           
-                        }
-                            
-                        else if(2*j+1 < n && ifPalindrome(s.substring(i,2*j+1))){
-                            j = 2*j+1;
-                            continue;
+                        int l = j-i+1;
                         
+                        if(j+l < n && ifPalindrome(s.substring(i,j+l+1))){
+                                j = j+l;
+                                continue;
+                        }
+                        else if(j+l+1 < n && ifPalindrome(s.substring(i,j+l+2))){
+                            j = j+l+1;
+                            continue;
                             
                         }
                         break;
-                        
-                    
-
                     }
                     if(j-i+1 > max){
                         max = j-i+1;
                         start = i;
                         end = j;
                     }
-                    
                 }
             }
         }
