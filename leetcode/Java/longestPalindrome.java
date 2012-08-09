@@ -10,14 +10,17 @@ public class Solution{
             for(int j = i+1; j < n;++j){
                 if(ifPalindrome(s.substring(i,j+1))){
                     while(j < n){
-                        if(ifPalindrome(s.substring(i,2*j))){
+                        if(2*j < n && ifPalindrome(s.substring(i,2*j))){
                             j = 2*j;
                             continue;
+                           
                         }
                             
-                        else if(ifPalindrome(s.substring(i,2*j+1))){
+                        else if(2*j+1 < n && ifPalindrome(s.substring(i,2*j+1))){
                             j = 2*j+1;
                             continue;
+                        
+                            
                         }
                         break;
                         
