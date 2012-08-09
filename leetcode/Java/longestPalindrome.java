@@ -6,41 +6,40 @@ public class Solution{
         int max = 0;
         int start = 0;
         int end = 0;
+        int p = 0;
+        int q = 0;
+        int l = 0;
         for(int i = 0; i < n;++i){
-            int j = i+1;
-               
-            while(j < n){
-                if(ifPalindrome(s.substring(i,j+1))){
-                    int l = j-i+1;
-                    if(j+l < n && ifPalindrome(s.substring(j,j+l+1))){
-                        j = j+l;
-                        continue;
-                           
-                    }
-                        
-                            
-                    else if(j+l+1 < n && ifPalindrome(s.substring(j+1,j+l+2))){
-                        j = j+l+1;
-                        continue;           
-                    }
-                    
-                    if(j-i+1 > max){
-                        max = j-i+1;
-                        start = i;
-                        end = j;
-                    }
+            start = i;
+            end = n-i;
+            while(true){
+                if(start > end){
+                    end = start+end-i;
+                    start = i;
                     break;
-                               
                 }
-                else
-                    ++j;
                 
-            }
-            
+                if(s.charAt(start) == s.charAt(end)){
+                    //l = start-end+1;
                     
-          }
+                    start++;
+                    end--;
+                    continue;
+                }
+                else{
+                    end--;
+                    //q = end;
+                    
+                }
+
+            }
+            if(end-start+1 > q-p+1)
+                p = start;
+                q = end;
+            }
+        }
             
-        return s.substring(start,end+1);
+        return s.substring(p,q+1);
     }
 
     public boolean ifPalindrome(String s){
