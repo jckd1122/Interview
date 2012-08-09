@@ -1,7 +1,7 @@
 import java.lang.String;
 
-public class Solution{
-    public String longestPalindrome(String s){
+public class longestPalindromeAlter{
+    public static String longestPalindrome(String s){
         int l = s.length();
         int maxSoFarOdd = 0;
         int maxSoFarEven = 0;
@@ -11,15 +11,17 @@ public class Solution{
         int m = 0;  //start index for curEnd
         int n = 0;
         for(int i = 0; i < l;++i){
-            if(m >= 1 && s.charAt(i) == s.charAt(m-1)){
-                if(m >= 1){
-                    m--;
-                    n++;
+            if(m >= 1){
+                if(s.charAt(i) == s.charAt(m-1)){
+                    if(m >= 1){
+                        m--;
+                        n++;
+                    }
                 }
-            }
-            else{
-                m = n+1;
-                n = n+1;
+                else{
+                    m = i+1;
+                    n = i+1;
+                }
             }
             curEnd = n-m+1;
             if(curEnd > maxSoFarOdd){
@@ -31,7 +33,7 @@ public class Solution{
 
         int p1 = 0;
         int q1 = 0;
-        int m1 = 0;
+        int m1 = 1;
         int n1 = 0;
         curEnd = 0;
 
@@ -44,8 +46,8 @@ public class Solution{
                 }
             }
             else{
-                m1 = n1+1;
-                n1 = n1+1;
+                m1 = i+1;
+                n1 = i+1;
             }
             curEnd = n1-m1+1;
             if(curEnd > maxSoFarEven){
@@ -59,6 +61,14 @@ public class Solution{
             return s.substring(p1,q1+1);
         else
             return s.substring(p,q+1);
+    }
+
+
+    public static void main(String[] args){
+        String s = "adam";
+        System.out.println(longestPalindrome(s));
+
+
     }
 
     
