@@ -27,7 +27,10 @@ public class Solution{
                     continue;
                 }
                 else{
-                    end--;
+                    if(end - start > 1)
+                        end--;
+                    else
+                        break;
                     //q = end;
                     
                 }
