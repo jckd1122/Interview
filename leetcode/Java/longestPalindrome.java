@@ -8,7 +8,7 @@ public class Solution{
         int end = 0;
         for(int i = 0; i < n;++i){
             for(int j = i+1; j < n;++j){
-                ifPalindrome(s.substring(i,j+1)){
+                if(ifPalindrome(s.substring(i,j+1))){
                     if(j-i+1 > max){
                         max = j-i+1;
                         start = i;
