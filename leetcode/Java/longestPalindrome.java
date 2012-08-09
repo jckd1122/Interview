@@ -9,6 +9,21 @@ public class Solution{
         for(int i = 0; i < n;++i){
             for(int j = i+1; j < n;++j){
                 if(ifPalindrome(s.substring(i,j+1))){
+                    while(j < n){
+                        if(ifPalindrome(s.substring(i,2*j))){
+                            j = 2*j;
+                            continue;
+                        }
+                            
+                        else if(ifPalindrome(s.substring(i,2*j+1))){
+                            j = 2*j+1;
+                            continue;
+                        }
+                        break;
+                        
+                    
+
+                    }
                     if(j-i+1 > max){
                         max = j-i+1;
                         start = i;

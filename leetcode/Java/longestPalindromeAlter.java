@@ -23,6 +23,10 @@ public class longestPalindromeAlter{
                     n = i+1;
                 }
             }
+            else{
+                m = i;
+                n = i;
+            }
             curEnd = n-m+1;
             if(curEnd > maxSoFarOdd){
                 p = m;
@@ -65,7 +69,7 @@ public class longestPalindromeAlter{
 
 
     public static void main(String[] args){
-        String s = "adam";
+        String s = "abcba";
         System.out.println(longestPalindrome(s));
 
 
