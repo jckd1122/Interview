@@ -14,6 +14,7 @@ public class Solution{
                         start = i;
                         end = j;
                     }
+                    break;
                 }
             }
         }
