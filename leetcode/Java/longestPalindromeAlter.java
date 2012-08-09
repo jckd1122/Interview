@@ -4,16 +4,18 @@ public class Solution{
     public String longestPalindrome(String s){
         int l = s.length();
         int maxSoFarOdd = 0;
-        int maxSoFarEven = 0
+        int maxSoFarEven = 0;
         int curEnd = 0;
         int p = 0;  //start index for masSoFar
         int q = 0;
-        int m = 1;  //start index for curEnd
+        int m = 0;  //start index for curEnd
         int n = 0;
         for(int i = 0; i < l;++i){
-            if(s.charAt(i) == s.charAt(m-1)){
-                m--;
-                n++;
+            if(m >= 1 && s.charAt(i) == s.charAt(m-1)){
+                if(m >= 1){
+                    m--;
+                    n++;
+                }
             }
             else{
                 m = n+1;
@@ -27,17 +29,19 @@ public class Solution{
             }
         }
 
-        p1 = 0;
-        q1 = 0;
-        m1 = 0;
-        n1 = 0;
+        int p1 = 0;
+        int q1 = 0;
+        int m1 = 0;
+        int n1 = 0;
         curEnd = 0;
 
         
         for(int i = 0; i < l;++i){
             if(s.charAt(i) == s.charAt(m1)){
-                m1--;
-                n1++;
+                if(m1 >= 1){
+                    m1--;
+                    n1++;
+                }
             }
             else{
                 m1 = n1+1;
@@ -57,14 +61,7 @@ public class Solution{
             return s.substring(p,q+1);
     }
 
-    public boolean ifPalindrome(String s){
-        int n = s.length();
-        for(int i = 0; i < n/2;++i){
-            if(s.charAt(i) != s.charAt(n-i-1))
-                return false;
-        }
-        return true;
-    }
+    
 
 
 
