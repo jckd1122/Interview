@@ -33,7 +33,7 @@ public class Solution{
                 }
 
             }
-            if(end-start+1 > q-p+1)
+            if(end-start+1 > q-p+1){
                 p = start;
                 q = end;
             }
