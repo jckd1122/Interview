@@ -11,7 +11,6 @@ public class Solution{
                 if(ifPalindrome(s.substring(i,j+1))){
                     while(j < n){
                         int l = j-i+1;
-                        
                         if(j+l < n && ifPalindrome(s.substring(i,j+l+1))){
                                 j = j+l;
                                 continue;
@@ -19,7 +18,6 @@ public class Solution{
                         else if(j+l+1 < n && ifPalindrome(s.substring(i,j+l+2))){
                             j = j+l+1;
                             continue;
-                            
                         }
                         break;
                     }
