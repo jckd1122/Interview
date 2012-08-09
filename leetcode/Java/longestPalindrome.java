@@ -11,7 +11,7 @@ public class Solution{
         int l = 0;
         for(int i = 0; i < n;++i){
             start = i;
-            end = n-i;
+            end = n-1
             while(true){
                 if(start > end){
                     end = start+end-i;
