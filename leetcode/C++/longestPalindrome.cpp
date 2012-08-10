@@ -1,7 +1,7 @@
-import java.lang.String;
 
-public class Solution{
-    public String longestPalindrome(String s){
+class Solution{
+public:
+    string longestPalindrome(string s){
         int n = s.length();
         int start = 0;
         int end = 0;
@@ -13,7 +13,7 @@ public class Solution{
             start = i;
             
             while(true){
-                if(ifPalindrome(s.substring(i,end+1)))
+                if(ifPalindrome(s.substr(i,end-i+1)))
                     break;
                 else
                     end--;
@@ -23,15 +23,15 @@ public class Solution{
                 q = end;
             }
         }
-        return s.substring(p,q+1);
+        return s.substr(p,q-p+1);
     }
 
-    public boolean ifPalindrome(String s){
+    bool ifPalindrome(string s){
         int n = s.length();
         for(int i = 0; i < n/2;++i){
-            if(s.charAt(i) != s.charAt(n-i-1))
+            if(s[i] != s[n-i-1])
                 return false;
         }
         return true;
     }
-}
+};
