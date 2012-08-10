@@ -6,7 +6,7 @@ public class Solution {
         int q = 0;
 
         for(int i = 0; i < n-1;++i){
-            //if s[i] is in the middle
+            //if s[i] ,s[i]is in the middle
             if(s.charAt(i) == s.charAt(i+1)){
                 l = i;
                 u = i+1;
@@ -24,7 +24,7 @@ public class Solution {
                     p = l;
                 }
             }
-            //s[i] and s[i+1] is in the middle
+            //s[i] in the middle
             l = i;
             u = i;
             while(l > 0 && u < n-1){
