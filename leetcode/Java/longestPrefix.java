@@ -1,5 +1,4 @@
 
-
 public class longestPrefix{
     public String longestCommonPrefix(String[] strs){
         int l = 0;
@@ -15,7 +14,7 @@ public class longestPrefix{
                     finish = false;
                     break;
                 }
-                if(i < strs[j].length() && first.charAt(i) == strs[j].charAt(i)){
+                if(i < strs[j].length() && first.charAt(i) == strs[j].charAt(i))
                     continue;    
                 else{
                     finish = false;
