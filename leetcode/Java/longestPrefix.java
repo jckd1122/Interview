@@ -3,8 +3,10 @@ public class Solution {
         int l = 0;
         int u = 0;
         boolean finish = true;
+        
+        if(strs.length == 0)
+            return "";
         String first = strs[0];
-
         if (first.length() == 0)
             return "";
         if(strs.length == 1)
