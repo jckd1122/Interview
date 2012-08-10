@@ -1,5 +1,5 @@
-public class Solution {
-    public String longestCommonPrefix(String[] strs){
+public class longestPrefix {
+    public static String longestCommonPrefix(String[] strs){
         int l = 0;
         int u = 0;
         boolean finish = true;
@@ -20,8 +20,9 @@ public class Solution {
                     finish = false;
                     break;
                 }
-                else if(first.charAt(i) == strs[j].charAt(i))
-                    continue;    
+                else if(first.charAt(i) == strs[j].charAt(i)){
+                    continue;
+                }
                 else {
                     finish = false;
                     break;
@@ -29,10 +30,18 @@ public class Solution {
             }
             if(finish)
                 u++;
-            else
+            else{
+                u--;
                 break;
+            }
         }
         return strs[0].substring(l,u+1);
+    }
+
+    public static void main(String[] args){
+        String[] strs = {"",""};
+        System.out.println(longestCommonPrefix(strs));
+
     }
 
 }
