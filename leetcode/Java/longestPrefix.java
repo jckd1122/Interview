@@ -1,4 +1,3 @@
-
 public class longestPrefix{
     public String longestCommonPrefix(String[] strs){
         int l = 0;
@@ -8,6 +7,8 @@ public class longestPrefix{
 
         if (first.length() == 0)
             return "";
+        if(strs.length == 1)
+            return strs[0];
         for(int i = 0; i < first.length();++i){
             for(int j = 1; j < strs.length;++j){
                 if(strs[j].length() == 0){
