@@ -2,70 +2,52 @@ import java.lang.String;
 //need to update
 public class longestPalindromeAlter{
     public static String longestPalindrome(String s){
-        int l = s.length();
-        int maxSoFarOdd = 0;
-        int maxSoFarEven = 0;
-        int curEnd = 0;
-        int p = 0;  //start index for masSoFar
-        int q = 0;
-        int m = 0;  //start index for curEnd
-        int n = 0;
-        for(int i = 0; i < l;++i){
-            if(m >= 1){
-                if(s.charAt(i) == s.charAt(m-1)){
-                    if(m >= 1){
-                        m--;
-                        n++;
-                    }
-                }
-                else{
-                    m = i+1;
-                    n = i+1;
-                }
-            }
-            else{
-                m = i;
-                n = i;
-            }
-            curEnd = n-m+1;
-            if(curEnd > maxSoFarOdd){
-                p = m;
-                q = n;
-                maxSoFarOdd = q-p+1;
-            }
-        }
+        int n = s.length();
+        int l,u;
+        int p,q;
 
-        int p1 = 0;
-        int q1 = 0;
-        int m1 = 1;
-        int n1 = 0;
-        curEnd = 0;
-
+        for(int i = 0; i < n;++i){
         
-        for(int i = 0; i < l;++i){
-            if(s.charAt(i) == s.charAt(m1)){
-                if(m1 >= 1){
-                    m1--;
-                    n1++;
+            //if s[i] is in the middle
+            
+        
+            if(s.charAt(i) != s.charAt(i+1)){
+                l = i;
+                u = i;
+                while(l >= 1 && u <= n-1){
+                    l--;
+                    u++;
+                    if(s.charAt(l) != s.charAt(u))
+                        break;
+
+                }
+                if(q-p < u-l){
+                    q = u;
+                    p = l;
                 }
             }
-            else{
-                m1 = i+1;
-                n1 = i+1;
+
+
+
+            //s[i] and s[i+1] is in the middle
+            l = i;
+            u = i+1;
+            while(l >=1 && u <= n-1){
+                l--;
+                u++;
+                if(s.charAt(l) != s.charAt(u))
+                    break;
             }
-            curEnd = n1-m1+1;
-            if(curEnd > maxSoFarEven){
-                p1 = m1;
-                q1 = n1;
-                maxSoFarEven = q1-p1+1;
+            if(q-p < u-l){
+                q = u;
+                p = l;
             }
 
         }
-        if(maxSoFarEven > maxSoFarOdd)
-            return s.substring(p1,q1+1);
-        else
-            return s.substring(p,q+1);
+        return s.substring(p,q+1);
     }
+
+    
 
 
     public static void main(String[] args){
