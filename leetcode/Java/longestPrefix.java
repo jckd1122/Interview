@@ -8,16 +8,14 @@ public class Solution {
             return "";
         if(strs.length == 1)
             return strs[0];
+        for(int i = 0; i < strs.length;++i){
+            if(strs[i].length() == 0)
+                return "";
+        }
         String first = strs[0];
-        if (first.length() == 0)
-            return "";
+       
         for(int i = 0; i < first.length();++i){
             for(int j = 1; j < strs.length;++j){
-                if(strs[j].length() == 0){
-                    finish = false;
-                    u--;
-                    break;
-                }
                 if(i < strs[j].length() && first.charAt(i) == strs[j].charAt(i))
                     continue;    
                 else if(i >= strs[j].length())
@@ -34,4 +32,5 @@ public class Solution {
         }
         return strs[0].substring(l,u+1);
     }
+
 }
