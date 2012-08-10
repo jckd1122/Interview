@@ -1,4 +1,4 @@
-public class longestPrefix{
+public class Solution {
     public String longestCommonPrefix(String[] strs){
         int l = 0;
         int u = 0;
@@ -13,11 +13,14 @@ public class longestPrefix{
             for(int j = 1; j < strs.length;++j){
                 if(strs[j].length() == 0){
                     finish = false;
+                    u--;
                     break;
                 }
                 if(i < strs[j].length() && first.charAt(i) == strs[j].charAt(i))
                     continue;    
-                else{
+                else if(i >= strs[j].length())
+                    break;
+                else {
                     finish = false;
                     break;
                 }
@@ -29,5 +32,4 @@ public class longestPrefix{
         }
         return strs[0].substring(l,u+1);
     }
-
 }
