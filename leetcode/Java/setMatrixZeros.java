@@ -1,5 +1,5 @@
-public class setMatrixZeros{
-    public void setZeros(int[][] matrix){
+public class Solution {
+      public void setZeroes(int[][] matrix){
         int m = matrix.length;
         int n = matrix[0].length;
 
@@ -23,8 +23,4 @@ public class setMatrixZeros{
 
 
     }
-
-
-
-
 }
