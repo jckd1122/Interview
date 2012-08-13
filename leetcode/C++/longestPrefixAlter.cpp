@@ -1,5 +1,3 @@
-
-
 class Solution{
 public:
     string longestCommonPrefix(vector<string> &strs){
@@ -9,8 +7,8 @@ public:
 
         string cmp = strs[0]; 
         for(int i = 0; i < n;++i){
-            if(cmp.size() > strs[i])
-                cmp = strs[i];
+            if(cmp.size() >= strs[i].size())
+                cmp = cmp.substr(0,strs[i].size());
             for(int j = 0; j < cmp.size();++j){
                 if(cmp[j] != strs[i][j])
                     cmp = cmp.substr(0,j);
@@ -25,4 +23,4 @@ public:
 
 
 
-}
+};
