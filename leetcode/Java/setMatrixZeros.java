@@ -11,13 +11,13 @@ public class Solution {
                       arr1[i] = true;
                       arr2[j] = true;
                 }
-
+            }
         }
         
         for(int i = 0; i < m; ++i){
             if(arr1[i]){
                 for(int j = 0; j < n;++j){
-                    matrix[i][j] == 0;
+                    matrix[i][j] = 0;
                 }
             }
               
@@ -26,7 +26,7 @@ public class Solution {
          for(int j = 0; j < n; ++j){
             if(arr2[j]){
                 for(int i = 0; i < m;++i){
-                    matrix[i][j] == 0;
+                    matrix[i][j] = 0;
                 }
             }
               
