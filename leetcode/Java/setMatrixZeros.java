@@ -20,7 +20,7 @@ public class Solution {
         }
         
          
-       
+       //can't update the matrix's first col and row first, since it contains information about zero row and col
         for(int i = 1; i < m; ++i){
             if(matrix[i][0] == 1){
                 for(int j = 0; j < n;++j){
