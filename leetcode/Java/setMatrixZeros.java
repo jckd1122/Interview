@@ -8,21 +8,19 @@ public class Solution {
         for(int i = 0; i < m;++i){
             for(int j = 0; j < n;++j){
                 if(matrix[i][j] == 0){
-                    matrix[0][j]= 1;     //for col
-                    matrix[i][0] = 1;    //for row
+                    matrix[0][j]= 123456;     //for col
+                    matrix[i][0] = 123456;    //for row
                     if(i == 0)
                         tmp1 = 1;
                     if(j == 0)
                         tmp2 = 1;
-                   
                 }
             }
         }
         
-         
-       //can't update the matrix's first col and row first, since it contains information about zero row and col
+        //can't update the matrix's first col and row first, since it contains information about zero row and col
         for(int i = 1; i < m; ++i){
-            if(matrix[i][0] == 1){
+            if(matrix[i][0] == 123456){
                 for(int j = 0; j < n;++j){
                     matrix[i][j] = 0;
                 }
@@ -30,17 +28,17 @@ public class Solution {
         }
         
         for(int j = 1; j < n; ++j){
-            if(matrix[0][j] == 1){
+            if(matrix[0][j] == 123456){
                 for(int i = 0; i < m;++i){
                     matrix[i][j] = 0;
                 }
             }
         }
         
-         
         if(tmp1 == 1){
             for(int j = 0; j < n;++j){
                 matrix[0][j] = 0;
+    
             }
         }
         
