@@ -9,7 +9,7 @@ public class Solution {
         for(int i = 0; i < n;++i){
             if(isScramble(s1.substring(0,i+1),s2.substring(0,i+1)) && isScramble(s1.substring(i+1,n),s2.substring(i+1,n)))
                 return true;
-            if(isScramble(s1.substring(0,i+1),s2.substring(n-i-1,n)) $$ isScramble(s1.substring(i+1,n),s2.substring(0,n-i-1)))
+            if(isScramble(s1.substring(0,i+1),s2.substring(n-i-1,n)) && isScramble(s1.substring(i+1,n),s2.substring(0,n-i-1)))
                 return true;
         
         }
