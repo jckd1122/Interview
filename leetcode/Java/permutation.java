@@ -1,7 +1,8 @@
+import java.util.*;
 public class Solution{
     public ArrayList<ArrayList<Integer> > permute(int[] num){
         int n = num.length;
-        ArrayList<ArrayLIst<Integer> > baseList = new ArrayList<ArrayList<Integer> >();
+        ArrayList<ArrayList<Integer> > baseList = new ArrayList<ArrayList<Integer> >();
         ArrayList<Integer> baseEle = new ArrayList<Integer>();
         if(n == 1){
             baseEle.add(num[0]);
