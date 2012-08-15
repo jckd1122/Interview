@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Arrays;
 public class Solution{
-    public ArrayList<ArrayList<Integer> > permute(int[] num){
+    public ArrayList<ArrayList<Integer> > permuteUnique(int[] num){
         ArrayList<ArrayList<Integer> > list = new ArrayList<ArrayList<Integer> >();
         Arrays.sort(num);
         permuteHelper(list,num,0);
@@ -11,6 +11,7 @@ public class Solution{
 
     public void  permuteHelper(ArrayList<ArrayList<Integer> > list,int[] num,int start){
         int n = num.length;
+        boolean flag = false;
         if(start > n-1){    
             ArrayList<Integer> numList = new ArrayList<Integer>();
             for(int i = 0; i < n;++i)
@@ -19,12 +20,13 @@ public class Solution{
             list.add(numList);
             return;
         }
+        Set<Integer> set = new TreeSet<Integer>();
         for(int j = start; j < n;++j){
-            if(num[start] == num[j])
-                continue;
-            swap(num,start,j);
-            permuteHelper(list,num,start+1);
-            swap(num,start,j);
+            if(set.add(num[j])){
+                swap(num,start,j);
+                permuteHelper(list,num,start+1);
+                swap(num,start,j);
+            }
          
           
         }
