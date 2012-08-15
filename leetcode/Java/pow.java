@@ -1,6 +1,7 @@
 public class Solution{
     public double pow(double x, int n){
         double tmp,a;
+        //MIN_VALUE is one grader than MAX_VALUE(Absolute Value)  
         if(n == Integer.MIN_VALUE)
             return pow(x,-(n-1))*1/x;
         if(n < 0)
