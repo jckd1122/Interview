@@ -15,9 +15,9 @@ public:
                 return;
             }
             else{
-                for(int j = i; j < n-1;++j){
-                    if(num[j] < min){
-                        swap(num,i-1,j);
+                for(int j = i; j <= n-1;++j){
+                    if(num[j] <= num[i-1]){
+                        swap(num,i-1,j-1);
                         reverse(num,i,n-1);
                         return;
                     }
@@ -27,15 +27,12 @@ public:
         }
         reverse(num,0,n-1);
         return;
-
-
-
     }
 
     void reverse(vector<int> &num,int i,int j){
-        int l = (i-j+1)/2;
-        for(int k = i; k < i+l;++k)
-            swap(num,k,2*l-k+1);
+        int l = j-i+1;
+        for(int p = i,q = j; p < i+l/2;++p,--q)
+            swap(num,p,q);
     }
 
     void swap(vector<int> &num,int i,int j){
