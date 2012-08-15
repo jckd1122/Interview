@@ -9,11 +9,7 @@ public:
                 max = num[i-1];
                 continue;
             }
-            else if(num[i-1] < min){
-                swap(num,i-1,n-1);
-                reverse(num,i,n-1);
-                return;
-            }
+           
             else{
                 for(int j = i; j <= n-1;++j){
                     if(num[j] <= num[i-1]){
@@ -22,11 +18,14 @@ public:
                         return;
                     }
                 }
+                swap(num,i-1,n-1);
+                reverse(num,i,n-1);
+                return;
 
             }
         }
         reverse(num,0,n-1);
-        return;
+        
     }
 
     void reverse(vector<int> &num,int i,int j){
