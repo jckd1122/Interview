@@ -1,6 +1,5 @@
-
 class Solution{
-Public:
+public:
     void nextPermutation(vector<int> &num){
         int n = num.size();
         int max = num[n-1];
@@ -35,7 +34,7 @@ Public:
 
     void reverse(vector<int> &num,int i,int j){
         int l = (i-j+1)/2;
-        for(k = i; k < i+l;++k)
+        for(int k = i; k < i+l;++k)
             swap(num,k,2*l-k+1);
     }
 
