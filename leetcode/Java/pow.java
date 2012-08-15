@@ -1,6 +1,8 @@
 public class Solution{
     public double pow(double x, int n){
         double tmp,a;
+        if(n == Integer.MIN_VALUE)
+            return pow(x,-(n-1))*1/x;
         if(n < 0)
             return 1/pow(x,-n);
         if(n == 0)
