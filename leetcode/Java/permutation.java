@@ -10,15 +10,16 @@ public class Solution{
 
     public void  permuteHelper(ArrayList<ArrayList<Integer> > list,int[] num,int start){
         int n = num.length;
-        if(start == n){    
+        if(start > n-1){    
             ArrayList<Integer> numList = new ArrayList<Integer>();
-            numList.addAll(Arrays.asList(num));
+            for(int i = 0; i < n;++i)
+                numList.add(num[i]);
+            
             list.add(numList);
             return;
         }
-        for(int j = start; j <= n;++j){
+        for(int j = start; j < n;++j){
             swap(num,start,j);
-            ArrayList<Integer> ele = new ArrayList<Integer>();
             permuteHelper(list,num,start+1);
             swap(num,start,j);
          
