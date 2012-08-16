@@ -1,9 +1,8 @@
+//use backtracking to solve
+
 import java.util.*;
 public class Solution {
     public ArrayList<String> restoreIpAddresses(String s) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-        
         ArrayList<String> list = new ArrayList<String>();
         int l = s.length()+4;
         //reduce unnecessary calucalation,works for judge large since it produces a lot of long strings
