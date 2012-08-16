@@ -1,14 +1,11 @@
 public class Solution{
     public void rotate(int[][] matrix){
-        int m = matrix.length;
         int n = matrix[0].length;
-
+        
         for(int i = 0; i < n/2;++i){
             for(int j = i; j < n-i-1;j++){
                 swap(matrix,i,j);     
-
             }
-        
         }
     }
     //four way swap
