@@ -1,4 +1,4 @@
-// this requires some observation about the rotation can be transformed into a four swap problem
+// this requires some observation about the rotation can be transformed into a four way swap problem
 
 public class Solution{
     public void rotate(int[][] matrix){
