@@ -1,3 +1,5 @@
+//better solution using swap, will update later
+
 class Solution {
 public:
     string getPermutation(int n, int k) {
