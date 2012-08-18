@@ -7,9 +7,8 @@ public:
         for(int i = 1; i <= n;++i){
             stringstream s;
             s << i;
-            num += s.str();
-            
         }
+        num = s.str();
         while(k-- > 1){
             nextPermutation(num);
         }
