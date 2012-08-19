@@ -4,8 +4,6 @@
 #include <vector>
 using namespace std;
 
-
-//having some boundy issue,need to fix it
 class Solution{
 public:
     string getPermutation1(int n,int k){
