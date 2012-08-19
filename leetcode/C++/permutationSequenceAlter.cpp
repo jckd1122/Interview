@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 using namespace std;
-//
+
 class Solution{
 public:
     string getPermutation1(int n,int k){
