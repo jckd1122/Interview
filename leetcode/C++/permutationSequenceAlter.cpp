@@ -21,8 +21,9 @@ public:
             int r = k/f;
             swap(num[p],num[p+r]);
             k =  k-r*f;
+            num[p+r] = num[p+r-1];
             while(r > 1){
-                swap1(num[p+r],num[p+r-1]);
+                ; 
                 r--;
             }
             f = f/(n-1-p);
@@ -93,6 +94,6 @@ public:
 
 int main(){
     Solution wenqiang;
-    for(int i = 0; i < 15;++i)
-        wenqiang.getPermutation2(i,i);
+    for(int i = 1; i <=6 ;++i)
+        cout << wenqiang.getPermutation1(3,i) << endl;
 }
