@@ -19,9 +19,8 @@ public:
             int r = k/f;
             swap(num[p],num[p+r]);
             k =  k-r*f;
-            num[p+r] = num[p+r-1];
             while(r > 1){
-                ; 
+                swap(num[p+r],num[p+r-1]); 
                 r--;
             }
             f = f/(n-1-p);
