@@ -93,6 +93,6 @@ public:
 
 int main(){
     Solution wenqiang;
-    for(int i = 1; i <= 6;++i)
-        cout << wenqiang.getPermutation2(3,i) << endl;
+    for(int i = 0; i < 15;++i)
+        wenqiang.getPermutation2(i,i);
 }
