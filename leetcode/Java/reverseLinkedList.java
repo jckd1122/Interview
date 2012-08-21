@@ -27,13 +27,16 @@ public class Solution{
         while(n-- > 1){
             l2 = l2.next;
         }
-
+        
+        for(int)
         int tmp = l1.val;
         l1.val = l2.val;
         l2.val = tmp;
         return head;
 
     }
+    
+    
 
 
 
