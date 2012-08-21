@@ -37,7 +37,6 @@ public:
     string getPermutation2(int n, int k){
         string s;
         string head,tail;
-        string c = "1";
         s.resize(n);
     
         for(int i = 0; i < n;++i)
@@ -56,7 +55,7 @@ public:
             if(r <= 1)
                 s = s.substr(0,p+1)+s.substr(p+1);
             else
-                s = s.substr(0,p+1)+c+head+tail;
+                s = s.substr(0,p+1)+s.substr(p+r,1)+head+tail;
             f = f/(n-1-p);
             p++;
         }
