@@ -1,4 +1,4 @@
-public class Solution {
+class Solution {
 public:
     vector<string> restoreIpAddresses(string s) {
         vector<string> list;
@@ -23,14 +23,15 @@ public:
         }
 
        for(int i = 1; i <= n;++i){
-           if((i == 3 && Integer.parseInt(restStr.substr(0,3)) > 255) || (i > 3))
-               break;
+           int num;
+           stringstream(restStr.substr(0,3)) >> num;
+           if((i == 3 && num > 255) || (i > 3))
+              break;
            if(i > 1 && restStr.substr(0,i)[0] == '0')
                break;
            string added = restStr.substr(0,i)+".";
-           
            restoreHelper(list,restStr.substr(i,n-i),cur+added,l);
         }
     }
 
-}
+};
