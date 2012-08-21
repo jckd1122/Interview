@@ -1,38 +1,43 @@
-//use backtracking to solve
-
 import java.util.*;
-public class Solution {
-    public ArrayList<String> restoreIpAddresses(String s) {
+public class Solution{
+    public ArrayList<String> letterCombinations(String digits){
         ArrayList<String> list = new ArrayList<String>();
-        int l = s.length()+4;
-        //reduce unnecessary calucalation,works for judge large since it produces a lot of long strings
-        if(s.length() > 12)
-            return list;
-        restoreHelper(list,s,"",l);
+        Vector<Character> generated = new Vector<Character>(); 
+        //ArrayList<Character> letter = new ArrayList<Character>();
+        //letter.add('a');
+        //letter.add('b');
+        //letter.add('c');
+        combinationHelper(0,list,generated,digits);
         return list;
-
-
     }
 
-    void restoreHelper(ArrayList<String> list,String restStr,String cur,int l){
-        int n = restStr.length();
-        if(restStr.length() == 0){
-            if(cur.length() == l){ 
-                list.add(cur.substring(0,cur.length()-1));
-                
-            }
+    void combinationHelper(int depth,ArrayList<String> list,Vector<Character> generated,String digits){
+        int l = digits.length();
+        if( digits.length() == 0){
+            list.add(generate(generated));
             return;
         }
-
-       for(int i = 1; i <= n;++i){
-           if((i == 3 && Integer.parseInt(restStr.substring(0,3)) > 255) || (i > 3))
-               break;
-           if(i > 1 && restStr.substring(0,i).charAt(0) == '0')
-               break;
-           String added = restStr.substring(0,i)+".";
-           
-           restoreHelper(list,restStr.substring(i,n),cur+added,l);
+        for(int i = 0; i < l;++i){
+            // 2 and a 's difference is 47
+            //char c = digits.charAt(i)+47;
+            int k;
+            for(int j = 0; j < 3;++j){
+                k = digits.charAt(i)-'2';
+                char c = (char)(digits.charAt(i)+47+2*k+j);
+                generated.add(Character.valueOf(c));
+                combinationHelper(depth+1,list,generated,digits.substring(1));
+                generated.remove(generated.size()-1);
+                
+            }
         }
     }
+
+    String generate(Vector<Character> generated){
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < generated.size();++i)
+            builder.append(generated.get(i));
+        return builder.toString();
+    }
+
 
 }
