@@ -21,8 +21,8 @@ public class Solution{
             length++;
         }
         
-        if(length <=2){
-            
+        if(length < 2){
+            return head;
         }
             return head;
         while(m-- > 2){
