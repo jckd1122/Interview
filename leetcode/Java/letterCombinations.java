@@ -1,3 +1,4 @@
+import java.util.*;
 public class Solution{
     public ArrayList<String> letterCombinations(String digits){
         ArrayList<String> list = new ArrayList<String>();
@@ -6,13 +7,13 @@ public class Solution{
         //letter.add('a');
         //letter.add('b');
         //letter.add('c');
-        combinationHelper(0,list,letter,digits);
+        combinationHelper(0,list,generated,digits);
         return list;
     }
 
     void combinationHelper(int depth,ArrayList<String> list,Vector<Character> generated,String digits){
         int l = digits.length();
-        if( l == 0){
+        if( digits == ""){
             list.add(generate(generated));
             return;
         }
@@ -20,8 +21,9 @@ public class Solution{
             // 2 and a 's difference is 47
             //char c = digits.charAt(i)+47; 
             for(int j = 0; j < 3;++j){
-                generated.add(digits.charAt(i)+47+j);
-                combinationHeloer(depth+1,list,letter,digits.substring(1));
+                char c = (char)(digits.charAt(i)+47+j);
+                generated.add(Character.valueOf(c));
+                combinationHelper(depth+1,list,generated,digits.substring(1));
             }
         }
     }
