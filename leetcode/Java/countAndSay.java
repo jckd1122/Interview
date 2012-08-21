@@ -15,8 +15,7 @@ public class Solution{
                 count = 1;
                 
             }
-            if(l == 1)
-                buffer[prev.charAt(0)] = 1;
+
             //generare newPrev
             j = 0;
             while(j < l){
