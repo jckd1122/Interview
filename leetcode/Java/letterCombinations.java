@@ -13,18 +13,20 @@ public class Solution{
 
     void combinationHelper(int depth,ArrayList<String> list,Vector<Character> generated,String digits){
         int l = digits.length();
-        if( digits == ""){
+        if(l == 0){
             list.add(generate(generated));
             return;
         }
-        for(int i = 0; i < l;++i){
+        
             // 2 and a 's difference is 47
             //char c = digits.charAt(i)+47; 
-            for(int j = 0; j < 3;++j){
-                char c = (char)(digits.charAt(i)+47+j);
-                generated.add(Character.valueOf(c));
-                combinationHelper(depth+1,list,generated,digits.substring(1));
-            }
+        int k;
+        for(int i = 0; i < 3;++i){
+            k = digits.charAt(i)-'2';
+            char c = (char)(digits.charAt(0)+47+2*k+i);
+            generated.add(Character.valueOf(c));
+            combinationHelper(depth+1,list,generated,digits.substring(1));
+            
         }
     }
 
