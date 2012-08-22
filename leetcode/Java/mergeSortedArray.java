@@ -5,14 +5,16 @@ public class Solution{
         int h2 = 0;
         int k = 0;
         boolean isSwapped = false;
-        if(m == 0 || n == 0){
-            A = (m == 0)? B:A;
+        if(m == 0 ){
+            for(int i = 0; i < n;++i)
+                A[i] = B[i];
             return;
         }
         while(h2 < n){
             if(isSwapped){
                 if(B[0] <= B[h2]){
                     swap(A,B,h1,0);
+                    h1++;
                 }
                 else{
                     h2++;
