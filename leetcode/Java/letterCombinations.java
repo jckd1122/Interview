@@ -1,6 +1,6 @@
 import java.util.*;
-public class Solution{
-    public ArrayList<String> letterCombinations(String digits){
+public class letterCombinations{
+    public static ArrayList<String> letterCombinations(String digits){
         ArrayList<String> list = new ArrayList<String>();
         Vector<Character> generated = new Vector<Character>(); 
         //ArrayList<Character> letter = new ArrayList<Character>();
@@ -11,7 +11,7 @@ public class Solution{
         return list;
     }
 
-    void combinationHelper(int depth,ArrayList<String> list,Vector<Character> generated,String digits){
+    static void combinationHelper(int depth,ArrayList<String> list,Vector<Character> generated,String digits){
         int l = digits.length();
         if(l == 0){
             list.add(generate(generated));
@@ -22,7 +22,7 @@ public class Solution{
             //char c = digits.charAt(i)+47; 
         int k;
         for(int i = 0; i < 3;++i){
-            k = digits.charAt(i)-'2';
+            k = digits.charAt(0)-'2';
             //char c = (char)(digits.charAt(0)+47+2*k+i);
             char c = 'a';
             generated.add(Character.valueOf(c));
@@ -32,11 +32,18 @@ public class Solution{
         }
     }
 
-    String generate(Vector<Character> generated){
+    static String generate(Vector<Character> generated){
         StringBuilder builder = new StringBuilder();
         for(int i = 0; i < generated.size();++i)
             builder.append(generated.get(i));
         return builder.toString();
+    }
+
+
+    public static void main(String[] args){
+        letterCombinations("23");
+
+
     }
 
 
