@@ -23,9 +23,11 @@ public class Solution{
         int k;
         for(int i = 0; i < 3;++i){
             k = digits.charAt(i)-'2';
-            char c = (char)(digits.charAt(0)+47+2*k+i);
+            //char c = (char)(digits.charAt(0)+47+2*k+i);
+            char c = 'a';
             generated.add(Character.valueOf(c));
             combinationHelper(depth+1,list,generated,digits.substring(1));
+            generated.remove(generated.size()-1);
             
         }
     }
