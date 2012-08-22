@@ -9,6 +9,8 @@ public class Solution{
         while(k++ < m+n){
             A[k] = (A[h1] <= B[h2])? A[h1++]:B[h2++];
         }
+        
+        
 
 
     }
