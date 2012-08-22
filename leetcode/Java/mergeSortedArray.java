@@ -1,13 +1,7 @@
 public class Solution{
     public void merge(int[] A, int m, int[] B, int n){
         //copy array A's content to get out of merge place
-<<<<<<< HEAD
         int h1 = 0;
-=======
-        for(int i = 0; i < m;++i)
-            A[i+m] = A[i];
-        int h1 = m;
->>>>>>> afed4dc3c23ab0b2c452e6daea2e2088d1a5421d
         int h2 = 0;
         int k = 0;
         boolean isSwapped = false;
