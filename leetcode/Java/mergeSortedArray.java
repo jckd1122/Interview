@@ -5,7 +5,11 @@ public class Solution{
         int h2 = 0;
         int k = 0;
         boolean isSwapped = false;
-        while(k++ < m+n){
+        if(m == 0 || n == 0){
+            A = (m == 0)? B:A;
+            return;
+        }
+        while(h2 < n){
             if(isSwapped){
                 if(B[0] <= B[h2]){
                     swap(A,B,h1,0);
@@ -25,6 +29,7 @@ public class Solution{
                 isSwapped = true;
                 A[h1] = B[h2];
                 h2++;
+                
             }
                 
         }
