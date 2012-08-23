@@ -1,8 +1,16 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
 public class Solution{
     public ListNode rotateRight(ListNode head,int n){
-        if(head == null)
-            return head;
-        
         ListNode h = head;
         ListNode rotate = head;
         ListNode lastNode;
@@ -12,6 +20,13 @@ public class Solution{
              h = h.next;
              length++;
         }
+        if(head == null)
+            return head;
+        if(n == 0 || n%length == 0)
+            return head;
+        
+        
+        
         count = length-n;
         while(count > 1){
             rotate = rotate.next;
