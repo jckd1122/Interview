@@ -10,13 +10,16 @@ public class Solution{
                 A[i] = B[i];
             return;
         }
-        while(h2 < n){
+        for(int i = m; i < m+n;++i)
+            A[i] = 1000;
+        while(h1 < m+n && h2 < n){
             if(isSwapped){
                 if(B[0] <= B[h2]){
                     swap(A,B,h1,0);
                     h1++;
                 }
                 else{
+                    A[h1] = B[h2];
                     h2++;
                 }
                 continue;
@@ -29,7 +32,7 @@ public class Solution{
             else{
                 swap(A,B,h1,0);
                 isSwapped = true;
-                A[h1] = B[h2];
+                h1++;
                 h2++;
                 
             }
