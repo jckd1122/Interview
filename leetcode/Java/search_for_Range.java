@@ -26,16 +26,16 @@ public class Solution{
         mid1 = mid;
         mid2 = mid;
         while( l < mid1){
-            mid1 = (l+mid1)/2;
-            if(A[mid1] < target)
-                l = mid1+1;
+            int p = (l+mid1)/2;
+            if(A[p] < target)
+                l = p+1;
     
         }
         
         while( u  > mid2){
-            mid2 = (mid2+u)/2;
-            if(A[mid2] > target)
-                u = mid2-1;
+            int q = (mid2+u)/2;
+            if(A[q] > target)
+                u = q-1;
         }
 
     
