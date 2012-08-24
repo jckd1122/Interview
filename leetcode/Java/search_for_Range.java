@@ -4,12 +4,10 @@ public class Solution{
         int u = A.length-1;
         int mid1,mid2;
         int mid = 0;
-        boolean isFound = false;
 
         while(l <= u){
             mid = (l+u)/2;
             if(A[mid] == target){
-                isFound = true;
                 break;
             }
             else if(A[mid] > target)
@@ -38,12 +36,11 @@ public class Solution{
                 mid2 = q+1; 
         }
 
-        if(!isFound){
+        if(l > u){
             l = -1;
             u = -1;
         }
         int[] B = {l,u};
         return B;
     }
-
 } 
