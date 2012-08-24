@@ -14,36 +14,35 @@ public class Solution{
         if(m == n)
             return head;
 
-        ListNode prev1 = head;
-        ListNode prev1Tmp,cur1,post1;
-        ListNode cur2 = head;
-        ListNode post2;
-        
+        ListNode prev,cur,curTmp,start,end;
+        int pos = m+1;
         if(m == 1){
-            prev1 = new ListNode(Integer.MAX_VALUE);
-            prev1.next = head;
+            prev = head;
+            start = new ListNode(Integer.MAX_VALUE);
+            start.next =prev;
+            cur = prev.next;
+            end = prev;  // the first node to be reversed, which will be connected to end 
         }
-        while(m-- > 2){
-            prev1 = prev1.next;
+        
+        else{
+            start = head;
+            while(m-- > 2){
+                start = start.next;
+            }
+            prev = start.next;
+            cur = start.next.next;
+            end = prev;
         }
-        while(n-- > 1){
-            cur2 = cur2.next;
-        }
-        cur1 = prev1.next;
-        post1 = prev1.next.next;
-        post2 = cur2.next;
 
-        while(cur1 != cur2){
-            prev1Tmp = prev1;
-            prev1.next = post1;
-            cur2.next = cur1;
-            cur1.next = post2;
-            
-            prev1 = prev1Tmp;
-            cur1 = prev1.next;
-            post1 = prev1.next.next;
-            cur2 = cur2.next;
+        while(pos <= n){
+            start.next = cur;
+            curTmp = cur;
+            cur.next = prev;
+            prev = curTmp;
+            cur = prev.next;
+            pos++;
         }
+        end.next = cur;
         return head;
 
     }
