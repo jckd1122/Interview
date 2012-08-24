@@ -12,9 +12,10 @@ public class Solution{
             if(arr[c] == -1)
                 arr[c] = i;
             else{
-                start = arr[c]+1;
+                start = (start > arr[c]+1)? start:arr[c]+1;
+                arr[c] = i;
             }
-            max = (max > i-start+1)? i-start+1:max;
+            max = (max < i-start+1)? i-start+1:max;
 
         }
         return max;
