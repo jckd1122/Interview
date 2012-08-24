@@ -17,12 +17,7 @@ public class Solution{
             else
                 l = mid+1;
         }
-        
-        if(!isFound){
-            int[] B = {-1,-1};
-            return B;
-        }
-
+       
         mid1 = mid;
         mid2 = mid;
        
@@ -43,15 +38,12 @@ public class Solution{
                 mid2 = q+1; 
         }
 
-    
+        if(!isFound){
+            l = -1;
+            u = -1;
+        }
         int[] B = {l,u};
         return B;
-        
-
-
-
     }
-
-
 
 } 
