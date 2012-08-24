@@ -3,11 +3,12 @@ public class Solution{
         int l = 0;
         int u = A.length-1;
         int mid1,mid2;
+        int mid = 0;
         boolean isFound = false;
 
         while(l < u){
-            int mid = (l+u)/2;
-            if(A[mid] == target)i{
+            mid = (l+u)/2;
+            if(A[mid] == target){
                 isFound = true;
                 break;
             }
@@ -15,6 +16,11 @@ public class Solution{
                 u = mid-1;
             else
                 l = mid+1;
+        }
+        
+        if(!isFound){
+            int[] B = {-1,-1};
+            return B;
         }
 
         mid1 = mid;
@@ -32,14 +38,10 @@ public class Solution{
                 u = mid2-1;
         }
 
-        if(isFound){
-            int[] B = {l,u};
-            return B;
-        }
-        else{
-            int[] B = {-1,-1};
-            return B;
-        }
+    
+        int[] B = {l,u};
+        return B;
+        
 
 
 
