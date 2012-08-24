@@ -1,4 +1,3 @@
-
 public class Solution{
     public int lengthOfLongestSubstring(String s){
         int[] arr = new int[256];
@@ -6,6 +5,7 @@ public class Solution{
             arr[i] = -1;
 
         int l = s.length();
+        int max = 0;
         int start = 0;
         for(int i = start; i < l;++i){
             char c = s.charAt(i);
@@ -14,9 +14,10 @@ public class Solution{
             else{
                 start = arr[c]+1;
             }
+            max = (max > i-start+1)? i-start+1:max;
 
         }
-        return l-start;
+        return max;
 
     }
 
