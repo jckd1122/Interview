@@ -1,5 +1,7 @@
+//need to determine the start index for different situations
+
 public class Solution{
-    public int lengthOfLongestSubstring(String s){
+    public int lengthOfLongestSubstring1(String s){
         int[] arr = new int[256];
         for(int i = 0; i < 256;++i)
             arr[i] = -1;
@@ -22,6 +24,27 @@ public class Solution{
 
     }
 
+    public int lengthOfLongestSubstring2(String s){
+        int[] arr = new int[256];
+        for(int i = 0; i < 256;++i)
+            arr[i] = -1;
 
+        int l = s.length();
+        int max = 0;
+        int cur = 0;
+        for(int i = 0; i < l;++i){
+            char c = s.charAt(i);
+            if(arr[c] == -1 || i-cur > arr[c])
+                cur++;
+            else{
+                cur = i-arr[c];
+            }
+            arr[c] = i;
+            max = (max < cur)? cur:max;
+
+        }
+        return max;
+
+    }
 
 }
