@@ -18,15 +18,15 @@ public class Solution {
             
         ListNode h = head;
         ListNode prev,next,last2;
-        ListNode last1 = new ListNode(-1);
+        ListNode last1 = new ListNode(-1000);
         prev = last1;
         prev.next = head;
         
         
         //ListNode next = head;
         while(h != null){
-
-            if(h.val <= x){
+            next = h.next;
+            if(h.val < x && prev.val >= x){
                 last2 = last1.next;
                 last1.next = h;
                 last1 = last1.next;
@@ -35,7 +35,6 @@ public class Solution {
             }
             
             prev = h;
-            next = h.next;
             h = h.next;
         }
         return head;
