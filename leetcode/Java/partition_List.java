@@ -19,13 +19,18 @@ public class Solution {
         ListNode h = head;
         ListNode prev,next,last2;
         ListNode last1 = new ListNode(-1000);
+        ListNode start = last1;
         prev = last1;
         prev.next = head;
         
-        
+        if(head.val < x)
+            last1 = h;
+                
+            
         //ListNode next = head;
         while(h != null){
             next = h.next;
+            
             if(h.val < x && prev.val >= x){
                 last2 = last1.next;
                 last1.next = h;
@@ -37,6 +42,6 @@ public class Solution {
             prev = h;
             h = h.next;
         }
-        return head;
+        return start.next;
     }
 }
