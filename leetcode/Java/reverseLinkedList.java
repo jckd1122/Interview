@@ -47,18 +47,24 @@ public class Solution{
 
     }
 
-    public ListNode reverseBetween(ListNode head, int m, int n){
+   public ListNode reverseBetween(ListNode head, int m, int n){
         if(head == null || m == n)
             return head;
 
         //here prev corrsponds to the first element to be reversed
         ListNode prev = head;// includes m == 1's case 
-        ListNode cur;
-        ListNode end;
+        ListNode cur,end;
+        ListNode start = head;
         int count = m+1;
-        while(m > 1){
+        int pos1 = m;
+        int pos2 = m;
+        while(pos1 > 1){
             prev = prev.next;
-            m--;
+            pos1--;
+        }
+        while(pos2 > 2){
+            start = start.next;
+            pos2--;
         }
         cur = prev.next;
         end = prev;
@@ -71,7 +77,11 @@ public class Solution{
             count++;
         }
         end.next = cur;
-        return head;
+        if(m > 1)
+            start.next = prev;
+            
+        
+        return (m > 1)? head:prev;
 
 
 
