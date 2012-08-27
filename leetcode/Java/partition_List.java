@@ -18,16 +18,15 @@ public class Solution {
             
         ListNode h = head;
         ListNode prev,next,last2;
-        ListNode last1 = new ListNode(-1000);
+        ListNode last1 = new ListNode(Integer.MIN_VALUE);
         ListNode start = last1;
         prev = last1;
         prev.next = head;
         
+        //determine the first last1
         if(head.val < x)
             last1 = h;
                 
-            
-        //ListNode next = head;
         while(h != null){
             next = h.next;
             
