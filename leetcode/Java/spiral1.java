@@ -33,7 +33,7 @@ public class Solution{
                 list.add(matrix[i][colStart+n-1]);
             for(int j = colStart+n-2 ; j >= colStart;--j)
                 list.add(matrix[rowStart+m-1][j]);
-            for(int i = rowStart+m-2; i >= rowStart+1;++i)
+            for(int i = rowStart+m-2; i >= rowStart+1;--i)
                 list.add(matrix[i][colStart]);
             m--;
             n--;
