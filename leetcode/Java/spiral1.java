@@ -1,12 +1,13 @@
 import java.util.*;
+import java.util.*;
 public class Solution{
     public ArrayList<Integer> spiralOrder(int[][] matrix){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        if(matrix.length == 0)
+            return list;
+            
         int m = matrix.length;
         int n = matrix[0].length;
-        ArrayList<Integer> list = new ArrayList<Integer>();
-
-        if(n == 0)
-            return list;
         if(n == 1 && m > 1){
             for(int i = 0; i < m;++i)
                 list.add(matrix[i][0]);
@@ -24,10 +25,9 @@ public class Solution{
         }
 
         
-        int rowStart = 1;
-        int colStart = 1;
-        
-        while(true){
+        int rowStart = 0;
+        int colStart = 0;
+         while(true){
             
             
             
@@ -35,12 +35,12 @@ public class Solution{
                 for(int j = colStart; j < n;++j)
                     list.add(matrix[rowStart][j]);
             }
-            else if(colStart >= n-1 && rowStart < m-1){
+            if(colStart >= n-1 && rowStart < m-1){
                 for(int i = rowStart; i < m;++i)
                     list.add(matrix[i][colStart]);
                 break;
             }
-            else 
+            if(colStart == n-1 && rowStart == m-1)
                 break;
             
             
@@ -61,8 +61,7 @@ public class Solution{
 
         }
         return list;
-
-
+        
     }
 
 
