@@ -27,28 +27,12 @@ public class Solution{
         
         int rowStart = 0;
         int colStart = 0;
-         while(true){
-            
-            
-            
-            if(rowStart >= m-1 && colStart < n-1){
-                for(int j = colStart; j < n;++j)
-                    list.add(matrix[rowStart][j]);
-            }
-            if(colStart >= n-1 && rowStart < m-1){
-                for(int i = rowStart; i < m;++i)
-                    list.add(matrix[i][colStart]);
-                break;
-            }
-            if(colStart == n-1 && rowStart == m-1)
-                break;
-            
-            
+        while(true){
             for(int j = colStart ; j < n;++j)
                 list.add(matrix[rowStart][j]);
             for(int i = rowStart+1; i < m;++i)
-                list.add(matrix[i][colStart+n-1]);
-            for(int j = colStart+n-2 ; j >= colStart;--j)
+                list.add(matrix[i][colStart+n-2]);
+            for(int j = colStart+n-3; j >= colStart;--j)
                 list.add(matrix[rowStart+m-1][j]);
             for(int i = rowStart+m-2; i >= rowStart+1;--i)
                 list.add(matrix[i][colStart]);
@@ -57,6 +41,27 @@ public class Solution{
             colStart++;           
             m--;
             n--;
+            
+             if(rowStart < m-1 && colStart < n-1)
+                continue;
+             else if(rowStart == m-1 && colStart < n-1){
+                for(int j = colStart; j < n;++j)
+                    list.add(matrix[rowStart][j]);
+                break;
+            }
+            else if(colStart == n-1 && rowStart < m-1){
+                for(int i = rowStart; i < m;++i)
+                    list.add(matrix[i][colStart]);
+                break;
+            }
+            else if(colStart == n-1 && rowStart == m-1){
+                list.add(matrix[m-1][n-1]);
+                break;
+            }
+            else
+                break;
+        
+            
             
 
         }
