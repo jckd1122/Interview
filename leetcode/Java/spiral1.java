@@ -5,6 +5,8 @@ public class Solution{
         int n = matrix[0].length;
         ArrayList<Integer> list = new ArrayList<Integer>();
 
+        if(n == 0)
+            return list;
         if(n == 1 && m > 1){
             for(int i = 0; i < m;++i)
                 list.add(matrix[i][0]);
