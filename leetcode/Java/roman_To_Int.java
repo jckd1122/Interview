@@ -2,7 +2,7 @@ public class Solution {
     public int romanToInt(String s) {
         // Start typing your Java solution below
         // DO NOT write main() function
-        int[] arr = new arr[256];
+        int[] arr = new int[256];
         arr['N'] = 10000;
         arr['M'] = 1000;
         arr['D'] = 500;
