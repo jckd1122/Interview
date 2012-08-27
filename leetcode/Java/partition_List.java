@@ -17,11 +17,12 @@ public class Solution {
             return head;
             
         ListNode h = head;
-        ListNode prev,next,last2;
         ListNode last1 = new ListNode(Integer.MIN_VALUE);
+        last1.next = head;
         ListNode start = last1;
-        prev = last1;
-        prev.next = head;
+        ListNode prev = last1;
+        ListNode next,last2;
+        
         
         //determine the first last1
         if(head.val < x)
