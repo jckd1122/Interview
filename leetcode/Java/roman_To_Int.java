@@ -1,7 +1,9 @@
-public class Solution{
-    public int romanToInt(String s){
+public class Solution {
+    public int romanToInt(String s) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
         int[] arr = new arr[256];
-        arr[''] = Integer.MAX_VALUE;
+        arr['N'] = 10000;
         arr['M'] = 1000;
         arr['D'] = 500;
         arr['C'] = 100;
@@ -11,7 +13,7 @@ public class Solution{
         arr['I'] = 1;
         
         int ret = 0;
-        char prev = '';
+        char prev = 'N';
         int n = s.length();
         if(n == 0)
             return 0;
@@ -26,8 +28,5 @@ public class Solution{
         }
         return ret;
 
-        
     }
-
-
 }
