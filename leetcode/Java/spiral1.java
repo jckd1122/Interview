@@ -49,6 +49,9 @@ public class Solution{
                     list.add(matrix[i][colStart]);
                 break;
             }
+            if(rowStart == m-1 && colStart == n-1)
+                break;
+
 
         }
         return list;
