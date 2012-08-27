@@ -5,11 +5,10 @@ public class Solution{
         String ret = "";
         int l;
         for(int i = 0;i < 13;++i){
-            l = num/number[i];
+            l = num/number[i];        //if l == 0,will skip inner loop
             for(int j = 1;j <= l;++j)
                 ret += letter[i];
             num -= l*number[i];
-
         }
         return ret;
     }
