@@ -1,22 +1,23 @@
+import java.util.*;
 public class Solution{
     public ArrayList<Integer> spiralOrder(int[][] matrix){
-        int m = matrix.length();
-        int n = matrix[0].length();
+        int m = matrix.length;
+        int n = matrix[0].length;
         ArrayList<Integer> list = new ArrayList<Integer>();
 
         if(n == 1 && m > 1){
             for(int i = 0; i < m;++i)
-                list.add(matrix[i][0];
+                list.add(matrix[i][0]);
             return list;
         }
         if(m == 1 && n > 1){
             for(int j = 0; j < n;++j)
-                list.add(matrix[0][j];
+                list.add(matrix[0][j]);
             return list;
         }
 
         if(m == 1 && n == 1){
-            list.add(matrix[0][0];
+            list.add(matrix[0][0]);
             return list;
         }
 
