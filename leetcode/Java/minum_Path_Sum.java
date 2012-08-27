@@ -28,9 +28,8 @@ public class Solution {
         return table[i][j];
     }
     
+    //iterative way using extra array to store sub solutions
      public int minPathSum2(int[][] grid) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
         int m = grid.length;
         int n = grid[0].length;
         int[][] table = new int[m][n];
@@ -54,5 +53,23 @@ public class Solution {
             
         
         return table[m-1][n-1];
+    }
+    
+     //iterative way without using extra space
+     public int minPathSum3(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+         
+        for(int i = 1; i < m; ++i)
+            grid[i][0] += grid[i-1][0];
+        for(int j = 1; j < n; ++j)
+            grid[0][j] += grid[0][j-1];
+            
+        for(int i = 1; i < m; ++i){
+            for(int j = 1; j < n;++j){
+                grid[i][j] += Math.min(grid[i-1][j],grid[i][j-1]);
+            }
+        }
+        return grid[m-1][n-1];
     }
 }
