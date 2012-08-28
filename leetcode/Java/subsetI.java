@@ -1,7 +1,6 @@
 import java.util.*;
-
-public class subsetI{
-    public static ArrayList<ArrayList<Integer> > subsets(int[] S){
+public class Solution{
+    public ArrayList<ArrayList<Integer> > subsets(int[] S){
         int l = S.length;
         ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
         if(l == 0)
@@ -18,7 +17,7 @@ public class subsetI{
 
     }
 
-    static void helper(ArrayList<ArrayList<Integer>> list,ArrayList<Integer> buffer,int pos,int length,int[] S){
+    void helper(ArrayList<ArrayList<Integer>> list,ArrayList<Integer> buffer,int pos,int length,int[] S){
         if(buffer.size() == length){
             list.add(buffer);
             return;
@@ -33,22 +32,5 @@ public class subsetI{
         }
 
     }
-
-    public static void main(String[] args){
-        int[] S = {1,2,3};
-        //ArrayList<ArrayList<Integer>> list = subsets(S);
-        System.out.println(subsets(S).size());
-        for(int i = 0; i < subsets(S).size();++i){
-            for(int j = 0; j < subsets(S).get(i).size();++j){
-                System.out.print(subsets(S).get(i).get(j));
-            }
-            System.out.println();
-
-        }
-
-
-    }
-
-
 
 }
