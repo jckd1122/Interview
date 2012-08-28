@@ -1,15 +1,23 @@
-public class Soilution{
+public class Solution{
     public int uniquePathsWithObstacles(int[][] obstacleGrid){
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
+        boolean blocked = false;
         for(int i = 0; i < m;++i){
-            if(obstacleGrid[i][0] != 1)
+            if(obstacleGrid[i][0] != 1){
                 obstacleGrid[i][0] = 1;
+                if(i == 0)
+                    blocked = true;   //has been changed
+            }
             else{
+                if(i == 0)
+                    blocked = false;
                 for(int k = i ; k < m;++k)
                     obstacleGrid[k][0] = 0;
             }
         }
+        if(blocked)
+            obstacleGrid[0][0] = 1;
         for(int j = 0; j < n;++j){
             if(obstacleGrid[0][j] != 1)
                 obstacleGrid[0][j] = 1;
