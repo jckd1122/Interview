@@ -1,5 +1,7 @@
 public class Soilution{
     public int uniquePathsWithObstacles(int[][] obstacleGrid){
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
         for(int i = 0; i < m;++i){
             if(obstacleGrid[i][0] != 1)
                 obstacleGrid[i][0] = 1;
