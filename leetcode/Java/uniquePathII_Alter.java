@@ -21,7 +21,10 @@ public class Soilution{
 
         for(int i = 1; i < m;++i){
             for(int j = 1; j < n;++j){
-                obstacleGrid[i][j] = obstacleGrid[i-1][j]+obstacleGrid[i][j-1];
+                if(obstacleGrid[i][j] != 1)
+                    obstacleGrid[i][j] = obstacleGrid[i-1][j]+obstacleGrid[i][j-1];
+                else
+                    obstacleGrid[i][j] = 0;
 
             }
 
