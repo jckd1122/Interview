@@ -1,9 +1,9 @@
 public class Solution{
     public int uniquePaths(int m,int n){
-        int[][] arr = int[m][n];
+        int[][] arr = new int[m][n];
         for(int i = 0; i < m;++i)
             arr[i][0] = 1;
-        for(int j = 0; j < j;++j)
+        for(int j = 0; j < n;++j)
             arr[0][j] = 1;
 
         for(int i = 1; i < m;++i){
