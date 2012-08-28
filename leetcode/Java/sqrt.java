@@ -7,9 +7,9 @@ public class Solution{
         while(low <= hi){
             mid = low + (hi-low)/ 2;
             if (mid > 46340) {         			// 46340^2 ~= INT_MAX
-				hi = mid - 1;
-				continue;
-			}
+	    	hi = mid - 1;
+		continue;
+	    }
 
             if(mid*mid == x)
                 return mid;
