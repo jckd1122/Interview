@@ -28,7 +28,7 @@ public class Solution{
         }
 
         
-        for(int i = pos+1; i < S.length;++i){
+        for(int i = pos; i < S.length;++i){
             buffer.add(S[i]);
             helper(list,buffer,i+1,length,S);
             buffer.remove(buffer.size()-1);
