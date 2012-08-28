@@ -1,22 +1,28 @@
 public class Solution{
     public int sqrt(int x){
-        if(x >= 0 && x <= 1)
-            return x;
-
-        int low = 2;
-        int hi= x;
+        int low = 0;
+        int hi = x;
+        int mid = 0;
+        int ret = 0;
         while(low <= hi){
-            int mid =(low+hi)/2;
+            mid = low + (hi-low)/ 2;
+            if (mid > 46340) {         			// 46340^2 ~= INT_MAX
+				hi = mid - 1;
+				continue;
+			}
+
             if(mid*mid == x)
                 return mid;
             else if(mid*mid > x)
                 hi = mid-1;
-            else
+            else{
                 low = mid+1;
+                ret = mid;
+            }
 
         }
-
-
+        return ret;
+        
     }
 
 
