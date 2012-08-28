@@ -9,7 +9,11 @@ public class Solution{
         for(int i = 1; i <=l;++i){
             ArrayList<Integer> buffer = new ArrayList<Integer>();
             for(int j = 0; j < l;++j){
+                
+                buffer.add(S[j]);
                 helper(list,buffer,j,i,S);
+                buffer.remove(buffer.size()-1);
+                
             }
 
         }
@@ -24,7 +28,7 @@ public class Solution{
         }
 
         
-        for(int i = pos; i < S.length;++i){
+        for(int i = pos+1; i < S.length;++i){
             buffer.add(S[i]);
             helper(list,buffer,i+1,length,S);
             buffer.remove(buffer.size()-1);
