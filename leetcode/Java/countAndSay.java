@@ -15,13 +15,13 @@ public class Solution{
                 }
                 else{
                     head = j;
-                    buffer[prev.charAt(j-1)+48] = count; 
+                    buffer[prev.charAt(j-1)-48] = count; 
                     count = 1;
                 }
                 
                 j++;
             }
-            buffer[prev.charAt(l-1)+48] = count;
+            buffer[prev.charAt(l-1)-48] = count;
             
            
             
@@ -29,9 +29,9 @@ public class Solution{
             //generare newPrev
             j = 0;
             while(j < l){
-                cur += (char)(buffer[prev.charAt(j)]+48); 
+                cur += (char)(buffer[prev.charAt(j)]-48); 
                 cur += prev.charAt(j);
-                j += buffer[prev.charAt(j)+48] ;
+                j += buffer[prev.charAt(j)-48] ;
 
             }
             prev = cur;
