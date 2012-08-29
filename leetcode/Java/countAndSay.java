@@ -2,7 +2,7 @@ public class Solution{
 
     public String countAndSay(int n){
         int[] buffer = new int[10];
-        String cur = "";
+        String cur = "1";
         String prev = "1";
         for(int i = 2; i <= n;++i){
             int l = prev.length();
