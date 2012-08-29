@@ -1,3 +1,5 @@
+//while looping, construct the result
+
 public class Solution{
     public String countAndSay(int n){
         int[] buffer = new int[10];
