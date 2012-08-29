@@ -1,3 +1,4 @@
+import java.util.*;
 public class Solution{
     public ArrayList<ArrayList<Integer>> combine(int n ,int k){
         ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
@@ -17,14 +18,5 @@ public class Solution{
             dfs(list,buffer,depth+1,n,k);
             buffer.remove(buffer.size()-1);
         }
-
-
     }
-
-
-    
-
-
-
-
 }
