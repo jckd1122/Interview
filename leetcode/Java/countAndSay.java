@@ -31,7 +31,7 @@ public class Solution{
             while(j < l){
                 cur += (char)(buffer[prev.charAt(j)]+48); 
                 cur += prev.charAt(j);
-                j += buffer[prev.charAt(j)];
+                j += buffer[prev.charAt(j)+48] ;
 
             }
             prev = cur;
