@@ -5,8 +5,10 @@ public class countAndSay{
         String cur = "1";
         String prev = "1";
         for(int i = 2; i <= n;++i){
+            //System.out.println(prev);
             cur = "";
             int l = prev.length();
+            //System.out.println(l);
             int count = 0;
             int j = 0;
             int head = 0;
@@ -15,24 +17,23 @@ public class countAndSay{
                     count++;
                 }
                 else{
+                    //buffer[prev.charAt(j-1)-48] = count; 
+                    cur += (char)(count+48); 
+                    cur += prev.charAt(j-1);
                     head = j;
-                    buffer[prev.charAt(j-1)-48] = count; 
                     count = 1;
                 }
                 
                 j++;
             }
-            
-            buffer[prev.charAt(l-1)-48] = count;
-            j = 0;
-            while(j < l){
-                cur += (char)(buffer[prev.charAt(j)-48]+48); 
-                cur += prev.charAt(j);
-                
-                j += buffer[prev.charAt(j)-48] ;
 
-            }
+            cur += (char)(count+48); 
+            cur += prev.charAt(l-1);
             prev = cur;
+            
+            //buffer[prev.charAt(l-1)-48] = count;
+            
+        
         }
         return cur; 
 
@@ -43,7 +44,7 @@ public class countAndSay{
             int a = '1'-48;
             String s = "ab";
         
-            System.out.println(countAndSay(4));
+            System.out.println(countAndSay(5));
 
 
     }
