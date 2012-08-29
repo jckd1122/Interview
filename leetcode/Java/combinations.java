@@ -15,7 +15,7 @@ public class Solution{
 
         for(int i = pos; i < n;++i){
             buffer.add(i+1);
-            dfs(list,buffer,pos+1,n,k);
+            dfs(list,buffer,i+1,n,k);
             buffer.remove(buffer.size()-1);
         }
     }
