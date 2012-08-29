@@ -1,6 +1,5 @@
-public class countAndSay{
-
-    public static String countAndSay(int n){
+public class Solution{
+    public String countAndSay(int n){
         int[] buffer = new int[10];
         String cur = "1";
         String prev = "1";
@@ -37,16 +36,4 @@ public class countAndSay{
         return cur; 
 
     }
-
-
-    public static void main(String[] args){
-            int a = '1'-48;
-            String s = "ab";
-        
-            System.out.println(countAndSay(4));
-
-
-    }
-
-
 }
