@@ -21,20 +21,20 @@ public class Solution{
                 
                 j++;
             }
-            buffer[prev.charAt(l-1)-48] = count;
+           buffer[prev.charAt(l-1)-48] = count;
             
-           
-            
-
-            //generare newPrev
-            j = 0;
             while(j < l){
                 cur += (char)(buffer[prev.charAt(j)]-48); 
                 cur += prev.charAt(j);
+                
                 j += buffer[prev.charAt(j)-48] ;
 
             }
             prev = cur;
+            
+
+            //generare newPrev
+          
         }
         return cur; 
 
