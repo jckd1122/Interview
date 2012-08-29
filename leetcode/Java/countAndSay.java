@@ -6,20 +6,24 @@ public class Solution{
         String prev = "1";
         for(int i = 2; i <= n;++i){
             int l = prev.length();
-            int count = 1;
-            int j = 1;
-            if(j == l)
-                buffer[prev.charAt(j-1)+48] = 1;
-            while(j< l){
-                while(j < l && prev.charAt(j) == prev.charAt(j-1)){
+            int count = 0;
+            int j = 0;
+            int head = 0;
+            while(j < l){
+                if(prev.charAt(j) == prev.charAt(head)){
                     count++;
-                    j++;
                 }
-                buffer[prev.charAt(j-1)+48] = count;
-                count = 1;
-                ++j;
+                else{
+                    head = j;
+                    buffer[prev.charAt(j-1)+48] = count; 
+                    count = 1;
+                }
                 
+                j++;
             }
+            buffer[prev.charAt(l-1)+48] = count;
+            
+           
             
 
             //generare newPrev
