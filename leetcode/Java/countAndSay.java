@@ -18,11 +18,10 @@ public class Solution{
                     buffer[prev.charAt(j-1)-48] = count; 
                     count = 1;
                 }
-                
                 j++;
             }
-            
             buffer[prev.charAt(l-1)-48] = count;
+            
             j = 0;
             while(j < l){
                 cur += (char)(buffer[prev.charAt(j)-48]+48); 
