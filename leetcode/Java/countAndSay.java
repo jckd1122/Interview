@@ -4,10 +4,8 @@ public class Solution{
         String cur = "1";
         String prev = "1";
         for(int i = 2; i <= n;++i){
-            //System.out.println(prev);
             cur = "";
             int l = prev.length();
-            //System.out.println(l);
             int count = 0;
             int j = 0;
             int head = 0;
