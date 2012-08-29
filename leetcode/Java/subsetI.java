@@ -1,3 +1,5 @@
+//be careful about the difference between with permutation and combination
+
 import java.util.*;
 public class Solution{
     public ArrayList<ArrayList<Integer> > subsets(int[] S){
