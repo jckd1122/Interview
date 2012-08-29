@@ -8,6 +8,8 @@ public class Solution{
             int l = prev.length();
             int count = 1;
             int j = 1;
+            if(j == l)
+                buffer[prev.charAt(j-1)+48] = 1;
             while(j< l){
                 while(prev.charAt(j) == prev.charAt(j-1)){
                     count++;
