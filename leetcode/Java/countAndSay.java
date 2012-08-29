@@ -20,7 +20,7 @@ public class Solution{
             }
 
             //generare newPrev
-            int j = 0;
+            j = 0;
             while(j < l){
                 cur += (char)(buffer[prev.charAt(j)]+48); 
                 cur += prev.charAt(j);
