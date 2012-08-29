@@ -7,15 +7,15 @@ public class Solution{
         return list;
     }
 
-    void dfs(ArrayList<ArrayList<Integer>> list,ArrayList<Integer> buffer, int depth, int n, int k){
+    void dfs(ArrayList<ArrayList<Integer>> list,ArrayList<Integer> buffer, int pos, int n, int k){
         if(buffer.size() == k){
             list.add(new ArrayList<Integer>(buffer));
             return;
         }
 
-        for(int i = depth+1; i <= n;++i){
+        for(int i = pos+1; i <= n;++i){
             buffer.add(i);
-            dfs(list,buffer,depth+1,n,k);
+            dfs(list,buffer,i,n,k);
             buffer.remove(buffer.size()-1);
         }
     }
