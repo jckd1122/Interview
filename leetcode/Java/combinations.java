@@ -13,7 +13,7 @@ public class Solution{
             return;
         }
 
-        for(int i = 1; i <= n;++i){
+        for(int i = depth+1; i <= n;++i){
             buffer.add(i);
             dfs(list,buffer,depth+1,n,k);
             buffer.remove(buffer.size()-1);
