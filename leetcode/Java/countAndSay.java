@@ -1,10 +1,11 @@
-public class Solution{
+public class countAndSay{
 
-    public String countAndSay(int n){
+    public static String countAndSay(int n){
         int[] buffer = new int[10];
         String cur = "1";
         String prev = "1";
         for(int i = 2; i <= n;++i){
+            cur = "";
             int l = prev.length();
             int count = 0;
             int j = 0;
@@ -21,22 +22,29 @@ public class Solution{
                 
                 j++;
             }
-           buffer[prev.charAt(l-1)-48] = count;
+            
+            buffer[prev.charAt(l-1)-48] = count;
             j = 0;
             while(j < l){
-                cur += (char)(buffer[prev.charAt(j)-48]); 
+                cur += (char)(buffer[prev.charAt(j)-48]+48); 
                 cur += prev.charAt(j);
                 
                 j += buffer[prev.charAt(j)-48] ;
 
             }
             prev = cur;
-            
-
-            //generare newPrev
-          
         }
         return cur; 
+
+    }
+
+
+    public static void main(String[] args){
+            int a = '1'-48;
+            String s = "ab";
+        
+            System.out.println(countAndSay(4));
+
 
     }
 
