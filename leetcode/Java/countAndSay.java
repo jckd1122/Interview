@@ -11,7 +11,7 @@ public class Solution{
             if(j == l)
                 buffer[prev.charAt(j-1)+48] = 1;
             while(j< l){
-                while(prev.charAt(j) == prev.charAt(j-1)){
+                while(j < l && prev.charAt(j) == prev.charAt(j-1)){
                     count++;
                     j++;
                 }
@@ -20,6 +20,7 @@ public class Solution{
                 ++j;
                 
             }
+            
 
             //generare newPrev
             j = 0;
