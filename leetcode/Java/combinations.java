@@ -9,7 +9,7 @@ public class Solution{
 
     void dfs(ArrayList<ArrayList<Integer>> list,ArrayList<Integer> buffer, int depth, int n, int k){
         if(buffer.size() == k){
-            list.add(buffer);
+            list.add(new ArrayList<Integer>(buffer));
             return;
         }
 
