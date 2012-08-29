@@ -2,8 +2,8 @@ public class Solution{
 
     public String countAndSay(int n){
         int[] buffer = new int[10];
+        String cur = "";
         String prev = "1";
-        String newPrev = "";
         for(int i = 2; i <= n;++i){
             int l = prev.length();
             int count = 1;
@@ -11,7 +11,7 @@ public class Solution{
             while(j++ < l){
                 while(prev.charAt(j++) == prev.charAt(j++-1))
                     count++;
-                buffer[prev.charAt(j-1)] = count;
+                buffer[prev.charAt(j-1)+48] = count;
                 count = 1;
                 
             }
@@ -19,14 +19,14 @@ public class Solution{
             //generare newPrev
             j = 0;
             while(j < l){
-                newPrev += (char)(buffer[prev.charAt(j)]+48); 
-                newPrev += prev.charAt(j);
+                cur += (char)(buffer[prev.charAt(j)]+48); 
+                cur += prev.charAt(j);
                 j += buffer[prev.charAt(j)];
 
             }
-            prev = newPrev;
+            prev = cur;
         }
-        return prev; 
+        return cur; 
 
     }
 
