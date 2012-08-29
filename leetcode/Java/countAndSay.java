@@ -24,7 +24,7 @@ public class Solution{
            buffer[prev.charAt(l-1)-48] = count;
             
             while(j < l){
-                cur += (char)(buffer[prev.charAt(j)]-48); 
+                cur += (char)(buffer[prev.charAt(j)-48]); 
                 cur += prev.charAt(j);
                 
                 j += buffer[prev.charAt(j)-48] ;
