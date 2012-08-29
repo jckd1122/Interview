@@ -13,8 +13,8 @@ public class Solution{
             return;
         }
 
-        for(int i = pos+1; i <= n;++i){
-            buffer.add(i);
+        for(int i = pos; i < n;++i){
+            buffer.add(i+1);
             dfs(list,buffer,pos+1,n,k);
             buffer.remove(buffer.size()-1);
         }
