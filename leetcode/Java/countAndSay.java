@@ -22,7 +22,7 @@ public class Solution{
                 j++;
             }
            buffer[prev.charAt(l-1)-48] = count;
-            
+            j = 0;
             while(j < l){
                 cur += (char)(buffer[prev.charAt(j)-48]); 
                 cur += prev.charAt(j);
