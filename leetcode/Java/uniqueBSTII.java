@@ -1,6 +1,6 @@
 import java.util.*;
 public class Solution{
-    public ArrayList<TreeNode> generateTress(int n){
+    public ArrayList<TreeNode> generateTrees(int n){
         ArrayList<TreeNode> list = new ArrayList<TreeNode>();
         generationHelper(list,1,n,n);
         return list;
