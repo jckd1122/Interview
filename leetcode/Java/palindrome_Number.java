@@ -11,7 +11,7 @@ public class Solution{
             x /= 10;
             count++;
         }
-        remain = num-x*Math.pow(10,count);
+        remain = num-x*(int)Math.pow(10,count);
 
         while(remain >= 10){
             if(x != remain%10)
