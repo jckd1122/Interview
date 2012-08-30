@@ -14,7 +14,7 @@ public class Solution{
         int h2 = n-1;
         
         
-        while(l1 <= h1 && l2 <= h2){
+        while(l1 <= h1){
             int mid1 = (l1+h1)/2;
             int mid2 =(l2+h2)/2;
             int c1 = ((h1-l1+1)%2 == 0)? (A[mid1]+A[mid1-1])/2:A[mid1];
