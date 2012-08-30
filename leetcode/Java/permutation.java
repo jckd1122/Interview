@@ -14,10 +14,9 @@ public class Solution{
             ArrayList<Integer> numList = new ArrayList<Integer>();
             for(int i = 0; i < n;++i)
                 numList.add(num[i]);
-            
             list.add(numList);
-            return;
         }
+        
         for(int j = start; j < n;++j){
             swap(num,start,j);
             permuteHelper(list,num,start+1);
