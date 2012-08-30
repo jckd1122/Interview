@@ -10,7 +10,7 @@ public class Solution{
 
     public void  permuteHelper(ArrayList<ArrayList<Integer> > list,int[] num,int start){
         int n = num.length;
-        if(start > n-1){    
+        if(start == n){    
             ArrayList<Integer> numList = new ArrayList<Integer>();
             for(int i = 0; i < n;++i)
                 numList.add(num[i]);
@@ -22,10 +22,7 @@ public class Solution{
             swap(num,start,j);
             permuteHelper(list,num,start+1);
             swap(num,start,j);
-         
-          
         }
-
 
     }
 
@@ -34,7 +31,4 @@ public class Solution{
         arr[i] = arr[j];
         arr[j] = tmp;
     }
-
-
-
 }
