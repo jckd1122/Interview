@@ -16,13 +16,13 @@ public class Solution{
                     count++;
                 }
                 else{
-                    cur = (char)(count+48)+prev.charAt(j-1);
+                    cur += ""+(char)(count+48)+prev.charAt(j-1);
                     head = j;
                     count = 1;
                 }
                 j++;
             }
-            cur = (char)(count+48)+prev.charAt(l-1);
+            cur += ""+(char)(count+48)+prev.charAt(l-1);
             prev = cur;
         }
         return cur; 
