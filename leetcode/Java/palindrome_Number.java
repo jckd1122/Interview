@@ -9,7 +9,7 @@ public class Solution{
         while(x/10 > 0){
             tail = x%10;
             x /= 10;
-            remain = (int)Math.pow(10,count)+remain;
+            remain = (int)Math.pow(10,count)+tail;
             count++;
         }
 
