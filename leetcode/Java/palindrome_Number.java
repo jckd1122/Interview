@@ -1,5 +1,5 @@
 public class Solution{
-    public boolean isPalindrome(int x){
+    public boolean ifPalindrome(int x){
         if(x < 0)
             return isPalindrome(-x);
         
@@ -9,7 +9,7 @@ public class Solution{
         while(x/10 > 0){
             tail = x%10;
             x /= 10;
-            remain = (int)Math.pow(10,count)+tail;
+            remain = tail*Math.pow(10,count)+remain;
             count++;
         }
 
@@ -17,8 +17,8 @@ public class Solution{
         while(remain >= 10){
             if(x != remain%10)
                 return false;
-            x = remain/(int)Math.pow(10,count);
-            remain = remain-x*(int)Math.pow(10,count);
+            x = remain/Math.pow(10,count);
+            remain = remain-x*Math.pow(10,count);
             count -= 2;
             remain /= 10;
 
