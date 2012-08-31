@@ -3,11 +3,13 @@ public class Solution{
         if(x <= 0)
             return false;
         
-        int len = 0;
+        int len = 1;
         int head = 0;
         int tail = 0;
-        while(x/(int)Math.pow(10,len))
+        while(x/(int)Math.pow(10,len) > 0){
             len++;
+        }
+        
 
         for(int i = 0; i < len/2;++i){
             head = x/(int)Math.pow(10,len-i);
