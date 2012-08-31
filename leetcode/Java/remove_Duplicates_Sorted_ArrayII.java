@@ -9,6 +9,8 @@ public class Solution {
         for(int i = 0; i < n;++i){
             if(A[head] == A[i]){
                 count++;
+                if(i == n-1)
+                    A[i] = A[head];
                 continue;
             }
             else{
