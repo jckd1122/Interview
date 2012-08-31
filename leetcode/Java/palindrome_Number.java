@@ -7,7 +7,7 @@ public class Solution{
         int num = x;
         //int tail = 0;
         int count = 0;
-        while(x > 0){
+        while(x > 10){
             x /= 10;
             count++;
         }
