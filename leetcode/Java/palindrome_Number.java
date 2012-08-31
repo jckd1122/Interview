@@ -11,13 +11,11 @@ public class Solution{
 
         for(int i = 0; i < len/2;++i){
             head = x/(int)Math.pow(10,len-i);
-            tail = x%10;
+            tail = (x/(int)Math.pow(10,i))%10;
             if(head != tail)
                 return false;
         }
         return true;
-
-
     }
 
 
