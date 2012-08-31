@@ -1,26 +1,19 @@
 public class Solution{
     public boolean isPalindrome(int x){
-        if(x < 0)
-            return isPalindrome(-x);
+        if(x <= 0)
+            return false;
         
-        int remain = 0;
-        int num = x;
-        //int tail = 0;
-        int count = 0;
-        while(x > 10){
-            x /= 10;
-            count++;
-        }
-        remain = num-x*(int)Math.pow(10,count);
+        int len = 0;
+        int head = 0;
+        int tail = 0;
+        while(x/(int)Math.pow(10,len))
+            len++;
 
-        while(remain >= 10){
-            if(x != remain%10)
+        for(int i = 0; i < len/2;++i){
+            head = x/(int)Math.pow(10,len-i);
+            tail = x%10;
+            if(head != tail)
                 return false;
-            x = remain/(int)Math.pow(10,count);
-            remain = remain-x*(int)Math.pow(10,count);
-            count -= 2;
-            remain /= 10;
-
         }
         return true;
 
