@@ -32,8 +32,13 @@ public class Solution{
                 table[i][j] = helper(s1,s2,s3,table,i,j+1);
         }
         else{
-            if(s3.charAt(i+j) == s1.charAt(i))
-                table[i][j] = (helper(s1,s2,s3,table,i+1,j) == 1)? 1:helper(s1,s2,s3,table,i,j+1);
+            if(s3.charAt(i+j) == s1.charAt(i)){
+                if(helper(s1,s2,s3,table,i+1,j) == 1 || helper(s1,s2,s3,table,i,j+1) == 1 )
+                    table[i][j] = 1;
+                else
+                    table[i][j] = -1;
+            }
+                
             else
                 table[i][j] = -1;
         }
