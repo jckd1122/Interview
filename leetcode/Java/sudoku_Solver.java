@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Vector;
+
 public class Solution{
     public void solveSudoku(char[][] board){
        //create vector 
@@ -19,11 +20,11 @@ public class Solution{
         dfs(board,0,v1,v2);
         return;
     }
-
-    boolean dfs(int[][] board,int depth,Vector<Integer> v1,Vector<Integer> v2){
+    
+    void dfs(char[][] board,int depth,Vector<Integer> v1,Vector<Integer> v2){
     
         if(depth  == v1.size())
-            return true;
+            return;
         
 
         //check,get the correct set(consider both x,y direction)
@@ -37,12 +38,12 @@ public class Solution{
                 dfs(board,depth+1,v1,v2);
             }
         }
-        return false;
+        return;
 
 
     }
 
-    boolean check(int[][] board,int x,int y,int num){
+    boolean check(char[][] board,int x,int y,int num){
         for(int j = 0; j <= 8;++j){
             if(board[x][j] == (char)(num+48))
                 return false;
