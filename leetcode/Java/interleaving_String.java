@@ -33,7 +33,7 @@ public class Solution{
         }
         else{
             if(s3.charAt(i+j) == s1.charAt(i))
-                table[i][j] = helper(s1.substring(i+1),s2,s3.substring(i+j),i+1,j) || isInterleave(s1,s2.substring(j+1),s3.substring(i+j),i,j+1);
+                table[i][j] = helper(s1.substring(i+1),s2,s3.substring(i+j),i+1,j) || helper(s1,s2.substring(j+1),s3.substring(i+j),i,j+1);
             else
                 table[i][j] = -1;
         }
