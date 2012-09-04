@@ -21,10 +21,10 @@ public class Solution{
         return;
     }
     
-    void dfs(char[][] board,int depth,Vector<Integer> v1,Vector<Integer> v2){
+    boolean dfs(char[][] board,int depth,Vector<Integer> v1,Vector<Integer> v2){
     
         if(depth  == v1.size())
-            return;
+            return true;
         
 
         //check,get the correct set(consider both x,y direction)
@@ -35,10 +35,12 @@ public class Solution{
         for(int i = 1;i <= 9;++i){
             if(check(board,x,y,i) == true){
                 board[x][y] = (char)(i+48);
-                dfs(board,depth+1,v1,v2);
+                if(dfs(board,depth+1,v1,v2) == true)
+                    return true;
+                board[x][y] = '.';
             }
         }
-        return;
+        return false;
 
 
     }
