@@ -29,14 +29,16 @@ public class Solution{
             if(s3.charAt(i+j) == s1.charAt(i))
                 table[i][j] = helper(s1,s2,s3,table,i+1,j);
             else if(s3.charAt(i+j) == s2.charAt(j))
-                table[i][j] = helper(s1,s2,s3,i,j+1);
+                table[i][j] = helper(s1,s2,s3,table,i,j+1);
         }
         else{
             if(s3.charAt(i+j) == s1.charAt(i))
-                table[i][j] = helper(s1,s2,s3,i+1,j) || helper(s1,s2,s3,i,j+1);
+                table[i][j] = (helper(s1,s2,s3,table,i+1,j) == 1)? 1:helper(s1,s2,s3,table,i,j+1);
             else
                 table[i][j] = -1;
         }
+        
+        return -1;
         
         
     }
