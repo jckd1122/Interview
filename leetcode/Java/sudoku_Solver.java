@@ -1,3 +1,4 @@
+import java.util.*;
 public class Solution{
     public void solveSudoku(char[][] board){
        //create vector 
@@ -15,10 +16,10 @@ public class Solution{
     
        
 
-        dfs(board,v1,v2);
+        dfs(board,0,v1,v2);
     }
 
-    boolean dfs(int[][] board,v,int depth,Vector<Integer> v1,Vector<Integer> v2){
+    boolean dfs(int[][] board,int depth,Vector<Integer> v1,Vector<Integer> v2){
     
         if(depth  == v1.size())
             return true;
