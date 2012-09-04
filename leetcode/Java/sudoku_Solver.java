@@ -17,6 +17,7 @@ public class Solution{
        
 
         dfs(board,0,v1,v2);
+        return;
     }
 
     boolean dfs(int[][] board,int depth,Vector<Integer> v1,Vector<Integer> v2){
@@ -31,8 +32,8 @@ public class Solution{
         int x = v1.get(depth);
         int y = v2.get(depth);
         for(int i = 1;i <= 9;++i){
-            if(check(board,x,y,i)){
-                board[x][y] = i;
+            if(check(board,x,y,i) == true){
+                board[x][y] = (char)(i+48);
                 dfs(board,depth+1,v1,v2);
             }
         }
@@ -41,15 +42,16 @@ public class Solution{
 
     }
 
-    void check(int[][] board,int x,int y,int num){
+    boolean check(int[][] board,int x,int y,int num){
         for(int j = 0; j <= 8;++j){
-            if(board[x][j] == num)
+            if(board[x][j] == (char)(num+48))
                 return false;
         }
         for(int i = 0; i <= 8;++i){
-            if(board[i][y] == num)
+            if(board[i][y] == (char)(num+48))
                 return false;
         }
+        return true;
     }
 
 }
