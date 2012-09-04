@@ -14,6 +14,8 @@ public class Solution{
                 return false;
         }
         
+        boolean[][] table = new table[s1.length()][s2.length()];
+        
         if(s1.charAt(0) != s2.charAt(0)){
             if(s3.charAt(0) == s1.charAt(0))
                 return isInterleave(s1.substring(1),s2,s3.substring(1));
