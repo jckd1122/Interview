@@ -6,8 +6,8 @@ public class Solution{
        //loop from back
        Vector<Integer> v1 = new Vector<Integer>();
        Vector<Integer> v2 = new Vector<Integer>();
-       for(int i = 8; i >= 0;--i){
-           for(int j = 8; j >= 0;--j){
+       for(int i = 0; i <= 8;++i){
+           for(int j = 0; j <= 8;++j){
                 if(board[i][j] == '.'){
                     v1.add(i);
                     v2.add(j);
