@@ -21,10 +21,12 @@ public class Solution{
                 return isInterleave(s1,s2.substring(1),s3.substring(1));
         }
         else{
-            return isInterleave(s1.substring(1),s2,s3.substring(1)) || isInterleave(s1,s2.substring(1),s3.substring(1));
+            if(s3.charAt(0) == s1.charAt(0))
+                return isInterleave(s1.substring(1),s2,s3.substring(1)) || isInterleave(s1,s2.substring(1),s3.substring(1));
+            return false;
         }
         
-        return false;
+        
     }
 
 
