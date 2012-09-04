@@ -1,14 +1,14 @@
 public class Solution{
     public boolean isInterleave(String s1,String s2,String s3){
         if(s1.length() == 0){
-            if(s2 == s3)
+            if(s2.equals(s3))
                 return true;
             else
                 return false;
         }
     
         if(s2.length() == 0){
-            if(s1 == s2)
+            if(s1.equals(s3))
                 return true;
             else
                 return false;
