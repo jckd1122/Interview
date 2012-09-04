@@ -1,37 +1,44 @@
 public class Solution{
     public boolean isInterleave(String s1,String s2,String s3){
-        if(s1.length() == 0){
-            if(s2.equals(s3))
-                return true;
-            else
-                return false;
-        }
-    
-        if(s2.length() == 0){
-            if(s1.equals(s3))
-                return true;
-            else
-                return false;
-        }
         
-        boolean[][] table = new table[s1.length()][s2.length()];
         
-        if(s1.charAt(0) != s2.charAt(0)){
-            if(s3.charAt(0) == s1.charAt(0))
-                return isInterleave(s1.substring(1),s2,s3.substring(1));
-            else if(s3.charAt(0) == s2.charAt(0))
-                return isInterleave(s1,s2.substring(1),s3.substring(1));
-        }
-        else{
-            if(s3.charAt(0) == s1.charAt(0))
-                return isInterleave(s1.substring(1),s2,s3.substring(1)) || isInterleave(s1,s2.substring(1),s3.substring(1));
-            return false;
-        }
-        
-        return false;
+        int[][] table = new table[s1.length()][s2.length()];
+        return (helper(s1,s2,s3,0,0,table) == 1)? true:false;
+
     }
 
+    int helper(String s1,String s2,String s3,int i, int j,int[][] table){
+        if(i == s1.length()){
+            if(s2.substring(j).equals(s3.substring(i+j)))
+                return 1;
+            else
+                return -1;
+        }
+    
+        if(j == s2.length()){
+            if(s1.substring(i).equals(s3.substring(i+j)))
+                return 1;
+            else
+                return -1;
+        }
 
+        if(table[i][j] != 0)
+            return table[i][j];
 
+        if(s1.charAt(i) != s2.charAt(j)){
+            if(s3.charAt(i+j) == s1.charAt(i))
+                table[i][j] = helper(s1.substring(i),s2,s3.substring(i+j),table,i+1,j);
+            else if(s3.charAt(i+j) == s2.charAt(j))
+                table[i][j] = helper(s1,s2.substring(j),s3.substring(i+j),i,j+1);
+        }
+        else{
+            if(s3.charAt(i+j) == s1.charAt(i))
+                table[i][j] = helper(s1.substring(i+1),s2,s3.substring(i+j)) || isInterleave(s1,s2.substring(j+1),s3.substring(i+j));
+            else
+                table[i][j] = -1;
+        }
+        
+        
+    }
 
 }
