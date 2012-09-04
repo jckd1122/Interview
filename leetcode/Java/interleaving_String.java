@@ -27,13 +27,13 @@ public class Solution{
 
         if(s1.charAt(i) != s2.charAt(j)){
             if(s3.charAt(i+j) == s1.charAt(i))
-                table[i][j] = helper(s1.substring(i),s2,s3.substring(i+j),table,i+1,j);
+                table[i][j] = helper(s1,s2,s3,table,i+1,j);
             else if(s3.charAt(i+j) == s2.charAt(j))
-                table[i][j] = helper(s1,s2.substring(j),s3.substring(i+j),i,j+1);
+                table[i][j] = helper(s1,s2,s3,i,j+1);
         }
         else{
             if(s3.charAt(i+j) == s1.charAt(i))
-                table[i][j] = helper(s1.substring(i+1),s2,s3.substring(i+j),i+1,j) || helper(s1,s2.substring(j+1),s3.substring(i+j),i,j+1);
+                table[i][j] = helper(s1,s2,s3,i+1,j) || helper(s1,s2,s3,i,j+1);
             else
                 table[i][j] = -1;
         }
