@@ -27,20 +27,20 @@ public class Solution{
 
         if(s1.charAt(i) != s2.charAt(j)){
             if(s3.charAt(i+j) == s1.charAt(i))
-                table[i+1][j] = helper(s1,s2,s3,table,i+1,j);
+                table[i][j] = helper(s1,s2,s3,table,i+1,j);
             else if(s3.charAt(i+j) == s2.charAt(j))
-                table[i][j+1] = helper(s1,s2,s3,table,i,j+1);
+                table[i][j] = helper(s1,s2,s3,table,i,j+1);
         }
         else{
             if(s3.charAt(i+j) == s2.charAt(j)){
                 if(helper(s1,s2,s3,table,i+1,j) == 1)
-                    table[i+1][j] = 1;
+                    table[i][j] = 1;
                 else
-                    table[i+1][j] = -1;
+                    table[i][j] = -1;
                 if(helper(s1,s2,s3,table,i,j+1) == 1)
-                    table[i][j+1] = 1;
+                    table[i][j] = 1;
                 else
-                    table[i][j+1] = -1;
+                    table[i][j] = -1;
 
             }
                 
