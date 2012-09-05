@@ -47,7 +47,7 @@ public class Solution{
             table[i][j] = -1;
         }
         
-        return -1;
+        return table[i][j];
         
         
     }
