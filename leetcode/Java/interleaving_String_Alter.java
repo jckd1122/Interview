@@ -9,20 +9,19 @@ public class Solution{
         if(l1+l2 != l3)
             return false;
 
-        boolean[][] table = new boolean[l2+1];
-        for(int i = 0; i < l2;++i)
-            table[l2] = true;
+        boolean[][] table = new boolean[l1][l2];
+        
 
-        for(int i = l1; i >= 0;--i){
-            for(int j = l2; j >= 0; --j){
-                if(j < l2 && s2.charAt(j) == s3.charAt(i+j) && table[j+1])
+        for(int i = 0; i < l1;++i){
+            for(int j = 0; j < l2; ++j){
+                if(s2.charAt(j) == s3.charAt(i+j-1) && table[i-1][j])
                     table[i][j] = true;
-                if(i < l1 && s1.charAt(i) == s3.charAt(i+j) && table[j])
+                if(s1.charAt(i) == s3.charAt(i+j-1) && table[i][j-1])
                     table[i][j] = true;
             }
         }
 
-        return table[0][0];
+        return table[l1-1][l2-1];
 
 
     }
