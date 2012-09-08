@@ -7,6 +7,75 @@
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
+ 
+/**
+ * Definition for an interval.
+ * public class Interval {
+ *     int start;
+ *     int end;
+ *     Interval() { start = 0; end = 0; }
+ *     Interval(int s, int e) { start = s; end = e; }
+ * }
+ */
+public class Solution {
+    public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        boolean sInRange = false;
+        int sIndex = 0;
+        int eIndex = 0;
+        boolean eInRange = false;
+        int l = intervals.size();
+        for(int i = 0; i < l;++i){
+            if(newInteval.start < intervals.get(0).start){
+                sIndex = 0;
+                break;
+            }
+            if(newInteval.start > intervals.get(l-1).end){
+                sIndex = l;
+                break;
+            }
+            if(i < l-1 && newInteval.start > intervals.get(i).end && newInteval.start < intervaks.get(i+1).start){
+                sIndex = i+1;
+                break;
+            }
+            if(newInteval.start < intervals.get(i).end && newInteval.start > intervaks.get(i).start){
+                sInRange = true;
+                sIndex = i;
+                break;
+            }
+        }
+        
+         for(int i = 0; i < l;++i){
+            if(newInteval.end < intervals.get(0).start){
+                eIndex = 0;
+                break;
+            }
+            if(newInteval.end > intervals.get(l-1).end){
+                eIndex = l;
+                break;
+            }
+            if(i < l-1 && newInteval.end > intervals.get(i).end && newInteval.end < intervaks.get(i+1).start){
+                eIndex = i+1;
+                break;
+            }
+            if(newInteval.end < intervals.get(i).end && newInteval.end > intervaks.get(i).start){
+                eInRange = true;
+                eIndex = i;
+                break;
+            }
+        }
+        
+        if(sInRange && eInRange){
+            if(sIndex = eIndex)
+                return intervals;
+            else{
+                
+            }
+            
+        }
+    }
+}
  import java.util.*;
 public class Solution {
      public ArrayList<Interval>  insert(ArrayList<Interval> intervals, Interval newInterval){
