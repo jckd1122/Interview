@@ -18,19 +18,21 @@ public class hanoi_Tower{
 
     static void move(int num,Tower src, Tower buf,Tower dst){
         int ele = 0;
-        if(num == 1){
-            ele = src.s.pop();
-            System.out.println("move "+ele+" to "+dst.name);
-            dst.s.push(ele);
-            return;
-        }
-        else{
+       // if(num == 1){
+       //     ele = src.s.pop();
+       //     System.out.println("move "+ele+" to "+dst.name);
+       //     dst.s.push(ele);
+       //     return;
+       // }
+       // else
+       if(num > 0){
             move(num-1,src,dst,buf);
             ele = src.s.pop();
             dst.s.push(ele);
             System.out.println("move "+ele+" to "+dst.name);
             move(num-1,buf,src,dst);
         }
+        //}
 
     }
 
