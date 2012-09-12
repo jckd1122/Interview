@@ -13,9 +13,18 @@ public class Solution{
                     j++;
                     continue;
                 }
-                if(j == l2-1)
-                    return false;
-                else if(p.charAt(j+1) == '*'){
+                if(p.charAt(j) == '*' && p.charAt(j-1) == s.charAt(i)){
+                    i++;
+                    j++;
+                    continue;
+                }
+                 if(p.charAt(j) == '*' &&  p,charAt(j-1) == '.'){
+                    i++;
+                    j++;
+                    continue;
+                }
+               
+                if(j < l2 -1 && p.charAt(j+1) == '*'){
                     j = j+2;
                 }
                else
