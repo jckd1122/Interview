@@ -34,6 +34,10 @@ public class Solution{
                         j++;
                     continue;
                 }
+                else{
+                    i++;
+                    j++;
+                }
 
             }
             
