@@ -22,7 +22,7 @@ public class Solution{
             else {
                 if(j == l2-1)
                     return (i == l1-1)? true:false;
-                else if(p.charAt(j+1) == '*'){
+                if(p.charAt(j+1) == '*'){
                     char c = s.charAt(i);
                     j = j+2;
                     while(i < l1-1 && s.charAt(i) == s.charAt(i+1))
