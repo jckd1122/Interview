@@ -5,7 +5,7 @@ public class Solution{
         int i = 0;
         int j = 0;
         while(i < l1){
-            if(s.charAt(i) != p.charAt(j))
+            if(s.charAt(i) != p.charAt(j)){
                 if(p.charAt(j) == '.'){
                     i++;
                     j++;
@@ -18,7 +18,8 @@ public class Solution{
                 }
                else
                     return false;
-            else{
+            }
+            else {
                 if(j == l2-1)
                     return (i == l1-1)? true:false;
                 else if(p.charAt(j+1) == '*'){
