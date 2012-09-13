@@ -8,10 +8,14 @@ public class Solution{
         int j = 0;
         while(i < l1 && j < l2){
             if(s.charAt(i) != p.charAt(j) && p.charAt(j) != '.'){
+                if(j < l2-1 && p.charAt(j+1) == '*'){
+                    j = j+2;
+                    continue;
+                }
+                else
+                    return false;
                 
                 
-                
-                return false;
             }
             else {
                 if(j == l2-1)
