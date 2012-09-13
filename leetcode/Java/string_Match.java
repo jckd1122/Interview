@@ -7,28 +7,11 @@ public class Solution{
         int i = 0;
         int j = 0;
         while(i < l1 && j < l2){
-            if(s.charAt(i) != p.charAt(j)){
-                if(p.charAt(j) == '.'){
-                    i++;
-                    j++;
-                    continue;
-                }
-                if(p.charAt(j) == '*' && p.charAt(j-1) == s.charAt(i)){
-                    i++;
-                    j++;
-                    continue;
-                }
-                 if(p.charAt(j) == '*' &&  p,charAt(j-1) == '.'){
-                    i++;
-                    j++;
-                    continue;
-                }
-               
-                if(j < l2 -1 && p.charAt(j+1) == '*'){
-                    j = j+2;
-                }
-               else
-                    return false;
+            if(s.charAt(i) != p.charAt(j) && p.charAt(j) != '.'){
+                
+                
+                
+                return false;
             }
             else {
                 if(j == l2-1)
@@ -36,10 +19,9 @@ public class Solution{
                 if(p.charAt(j+1) == '*'){
                     char c = s.charAt(i);
                     j = j+2;
-                    while(i < l1-1 && s.charAt(i) == s.charAt(i+1))
+                    while(i < l1 && s.charAt(i) == c)
                         i++;
-                    i++;
-                    while(j < l2-1 && p.charAt(j) == c)
+                    while(j < l2 && p.charAt(j) == c)
                         j++;
                     continue;
                 }
@@ -53,12 +35,9 @@ public class Solution{
 
 
         }
-        return true;
+        return (i >= l1 && j >= l2)? true:false;
 
 
     }
-
-
-
 
 }
