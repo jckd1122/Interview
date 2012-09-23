@@ -17,7 +17,7 @@ public class Solution{
                     list.add(matrix[i][s]);
                 return list;
             }
-            if(n-2*i < 1 || m-2*i < 1)
+            if(n-2*i == 0 || m-2*i == 0)
                 break;
             
             for(int j = i; j < n-i-1;++j)
