@@ -7,8 +7,6 @@ public class Solution{
         ArrayList<Integer> list = new ArrayList<Integer>();
         spiral_Helper(list,matrix,0,0,m,n);
         return list;
-        
-
     }
     
     void spiral_Helper(ArrayList<Integer> list,int[][] matrix,int x, int y,int m, int n){
