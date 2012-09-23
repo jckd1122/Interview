@@ -29,8 +29,13 @@ public class Solution{
             list.add(matrix[x][j]);
         for(int k = x; k < m+x-1;++k)
             list.add(matrix[k][n+x-1]);
-        for(int p = x; j < n+x-1;++j)
-            list.add(matrix[x][j]);
+        for(int p = n+y-1;p > y;--p)
+            list.add(matrix[x+m-1][p]);
+        for(int q = m+x-1; q > x;--q)
+            list.add(matrix[q][y]);
+        x++;
+        y++;
+        spiral_Helper(list,matrix,x,y,m-2,n-2);
     }
 
 
