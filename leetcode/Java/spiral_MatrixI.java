@@ -1,5 +1,5 @@
 import java.util.*;
-
+// can use recursion to make it look more clear
 public class Solution{
     public ArrayList<Integer> spiralOrder(int[][] matrix){
         int m = matrix.length;
