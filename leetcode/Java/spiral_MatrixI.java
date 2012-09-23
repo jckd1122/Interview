@@ -14,11 +14,15 @@ public class Solution{
                     list.add(matrix[s][i]);
                 return list;
             }
+            if(n-2*i < 1)
+                break;
             if(m-2*i == 1){
                 for(int s = i; s < n-i;++s)
                     list.add(matrix[i][s]);
                 return list;
             }
+            if(m-2*i < 1)
+                break;
             
             for(int j = i; j < n-i-1;++j)
                 list.add(matrix[i][j]);
@@ -34,8 +38,4 @@ public class Solution{
         return list;
 
     }
-
-    
-
-
 }
