@@ -41,7 +41,7 @@ public class Solution{
 
     int cal(ArrayList<Integer> list1,ArrayList<Integer> list2,int left,int right,int[] A){
         int sum = 0;
-        int height = (left < right)? left:right;
+        int height = (A[left] < A[right])? A[left]:A[right];
         sum +=(right-left-1)*height;
         for(int ele:list1)
             sum -= ele;
