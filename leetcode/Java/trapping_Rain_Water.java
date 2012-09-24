@@ -24,7 +24,7 @@ public class Solution{
                 i++;
             }
             
-            if(A[i] < prev){
+            if(i < l && A[i] < prev){
                 right = i-1;
                 sum += cal(list1,list2,left,right,A);
                 left = i-1;
