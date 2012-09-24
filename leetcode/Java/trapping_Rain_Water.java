@@ -12,24 +12,19 @@ public class Solution{
         ArrayList<Integer> list2 = new ArrayList<Integer>();
         while(i < l){
             //determine decrease
-            while(A[i] < prev){
+            while(i < l && A[i] <= prev ){
                 list1.add(A[i]);
                 prev = A[i];
                 i++;
             }
             
-            while(A[i] > prev){
+            while(i < l && A[i] >= prev ){
                 list2.add(A[i]);
                 prev = A[i];
                 i++;
             }
             
-            if(A[i] == prev){
-                right = i-1;
-                sum += cal(list1,list2,left,right,A);
-                left = i;
-            }
-            else{
+            if(A[i] < prev){
                 right = i-1;
                 sum += cal(list1,list2,left,right,A);
                 left = i-1;
