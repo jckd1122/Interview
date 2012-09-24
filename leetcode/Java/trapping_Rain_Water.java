@@ -24,7 +24,7 @@ public class Solution{
                 i++;
             }
             
-            if(A[i] == prev{)
+            if(A[i] == prev){
                 right = i-1;
                 sum += cal(list1,list2,left,right,A);
                 left = i;
@@ -44,7 +44,7 @@ public class Solution{
     }
 
 
-    int cal(ArrayList<Integer> lis1,ArrayList<Integer< list2,int left,int right,int[] A){
+    int cal(ArrayList<Integer> list1,ArrayList<Integer> list2,int left,int right,int[] A){
         int sum = 0;
         int height = (left < right)? left:right;
         sum += right-left-1;
