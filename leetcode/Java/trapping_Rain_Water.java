@@ -72,7 +72,7 @@ public class Solution{
         else{
             for(int i = 0; i < list1.size();++i)
                 if(list1.get(i) >= left+1)
-                sum -= A[list1.get(i)];
+                    sum -= A[list1.get(i)];
             for(int i = 0; i < list2.size();++i)
                 sum -= A[list2.get(i)];
         }
