@@ -52,7 +52,7 @@ public class Solution{
         }
         else{
             for(int ele : list1){
-                if(A[ele] < A[left] ){
+                if(A[ele] < A[right] ){
                     left = ele-1;
                     break;
                 }
