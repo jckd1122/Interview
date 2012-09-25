@@ -63,11 +63,11 @@ public class Solution{
         //int height = (A[left] < A[right])? A[left]:A[right];
         sum +=(right-left-1)*height;
         for(int i = 0; i < list1.size();++i)
-            if(list.get(i) >= left+1)
-                sum -= A[i];
+            if(list1.get(i) >= left+1)
+                sum -= A[list1.get(i)];
          for(int i = 0; i < list2.size();++i)
-            if(list.get(i) <= right-1)
-                sum -= A[i];
+            if(list2.get(i) <= right-1)
+                sum -= A[list2.get(i)];
         list1.clear();
         list2.clear();
         return sum;
