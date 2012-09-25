@@ -60,10 +60,10 @@ public class Solution{
         }
         //int height = (A[left] < A[right])? A[left]:A[right];
         sum +=(right-left-1)*height;
-        for(int ele:list1)
-            sum -= A[ele];
-        for(int ele:list2)
-            sum -= A[ele];
+        for(int i = left+1; i < list1.size();++i)
+            sum -= A[i];
+         for(int i = right-1; i < list2.size();++i)
+            sum -= A[i];
         list1.clear();
         list2.clear();
         return sum;
