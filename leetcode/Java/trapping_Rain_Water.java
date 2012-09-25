@@ -40,6 +40,8 @@ public class Solution{
 
 
     int cal(ArrayList<Integer> list1,ArrayList<Integer> list2,int left,int right,int[] A){
+        if(left == right)
+            return 0;
         int sum = 0;
         int height = (A[left] < A[right])? A[left]:A[right];
         if(A[left] < A[right]){
@@ -52,7 +54,7 @@ public class Solution{
         }
         else{
             for(int ele : list1){
-                if(A[ele] < A[right] ){
+                if(A[ele] <= A[right] ){
                     left = ele-1;
                     break;
                 }
