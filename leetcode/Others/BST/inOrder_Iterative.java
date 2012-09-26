@@ -43,6 +43,22 @@ public class inOrder_Iterative{
         }
     }
 
+    public static void print_Level(Node root){
+        if(root == null)
+            return;
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            Node node = queue.poll();
+            System.out.println(node.val);
+            if(node.left != null)
+                queue.offer(node.left);
+            if(node.right != null)
+                queue.offer(node.right);
+
+        }
+    }
+
 
     public static void main(String[] args){
         int[] arr = {1,2,3,4,5,6,7,8,9,10};
