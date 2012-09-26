@@ -6,8 +6,6 @@ public class Solution{
         int left = 0;
         int right = 0;
         int prev = 0;
-        boolean isLeft = false;
-        boolean isRight = false;
         ArrayList<Integer> list1 = new ArrayList<Integer>();
         ArrayList<Integer> list2 = new ArrayList<Integer>();
         while(i < l){
