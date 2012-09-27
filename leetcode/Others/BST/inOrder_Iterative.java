@@ -59,11 +59,26 @@ public class inOrder_Iterative{
         }
     }
 
+    public static Node arrToBST(int[] arr, int lo, int hi){
+        if(lo > hi)
+            return null;
+        int mid = lo+(hi-lo)/2;
+        Node root = new Node(arr[mid]);
+        root.left = arrToBST(arr,lo,mid-1);
+        root.right = arrToBST(arr,mid+1,hi);
+        return root;
+
+
+    }
+
 
     public static void main(String[] args){
         int[] arr = {1,2,3,4,5,6,7,8,9,10};
-        Node root = Node.arrayToBST(arr,0,9);
-        print1(root);
+        //Node root = Node.arrayToBST(arr,0,9);
+        //print1(root);
+        Node root = arrToBST(arr,0,9);
+        //print1(root);
+        print_Level(root);
     }
 
 
