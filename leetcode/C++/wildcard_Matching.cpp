@@ -24,7 +24,8 @@ public:
     
     //using DP 
     bool isMatch(const char *s,const char *p){
-        int[][] table = new int[][];
+        int[][] table = new int[strlen(s)+1][strlen(p)+1];
+        return isMatch_Helper(s,p,table,0,0);
         
 
     }
@@ -50,10 +51,16 @@ public:
             table[i][j] = 1;
         }
         else
-            return parse_one(s[i],p) && isMatch_Helper(s,p,table,i+1,j+1);
+            return parse_one(s[i],p[j]) && isMatch_Helper(s,p,table,i+1,j+1);
         
         
     }
+    
+   bool parse_one(const char s,const char p){
+     if(s != '\0' && (p == '?' || p == s))
+            return true;
+        return false;
+   } 
 
    bool parse_one(const char *s,const char *p){
         if(*s != '\0' && (*p == '?' || *p == *s))
