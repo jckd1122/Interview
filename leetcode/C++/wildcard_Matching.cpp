@@ -36,7 +36,7 @@ public:
     bool isMatch(const char *s,const char *p){
         int m = strlen(s)+1;
         int n = strlen(p)+1;
-        vector<vector<int> > table(strlen(s) + 1, vector<int>(strlen(p) + 1, -1));
+        vector<vector<int> > table(m, vector<int>(n, -1));
         return isMatch_Helper(s,p,table,0,0);
         
 
