@@ -10,7 +10,7 @@ public:
                     return true;
                 s++;
             }
-            return false;
+            return (*p == '*') && (p[1] == '\0');
         }
         else
             return parse_one(s,p) && isMatch(s+1,p+1);
