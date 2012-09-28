@@ -79,3 +79,43 @@ public:
      return false;
    } 
 };
+
+//iterative
+class Solution{
+public:
+    bool isMatch(const char *s,const char *p){
+        int i = 0;
+        int j = 0;
+
+        while(j < strlen(p)){
+            while(i < strlen(s)){
+                if(p[j] == '*'){
+                    if(s[i] == p[j]){
+                        i++;
+                        j++;
+                    }
+                    else{
+                        i++;
+                    }
+                }
+                else{
+                    if(!parse_one(s[i],p[j]))
+                        return false;
+                    i++;
+                    j++;
+                }
+            }    
+            return j >= strlen(p);
+        }
+        return i >= strlen(s);       
+        
+       
+
+    }
+    
+    bool parse_one(const char s,const char p){
+     if(s != '\0' && (p == '?' || p == s))
+        return true;
+     return false;
+   } 
+};
