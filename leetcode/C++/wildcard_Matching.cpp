@@ -91,12 +91,13 @@ public:
             while(i < strlen(s)){
                 if(p[j] == '*'){
                     for(int k = 0; k <= strlen(s)-i;++k){
-                        while(i+k < stelen(s) && s[i+k] == p[j]){
+                        while(i+k < strlen(s) && s[i+k] == p[j]){
                             i++;
                             j++;
                         }
                         if(i+k == strlen(s))
                             return true;
+                        
                     }       
                     
                 }
