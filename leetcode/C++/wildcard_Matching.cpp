@@ -1,4 +1,5 @@
 class Solution{
+public:
     bool isMatch(const char *s,const char *p){
         if(*p == '\0')
             return (*p == *s);
@@ -22,4 +23,4 @@ class Solution{
         return false;
 
     }
-}
+};
