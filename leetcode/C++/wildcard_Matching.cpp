@@ -22,30 +22,46 @@ public:
 
     }
     
-    //using DP 
+    bool parse_one(const char *s,const char *p){
+        if(*s != '\0' && (*p == '?' || *p == *s))
+            return true;
+        return false;
+
+    }
+};
+
+
+class Solution{
+public:
     bool isMatch(const char *s,const char *p){
-        int[][] table = new int[strlen(s)+1][strlen(p)+1];
+        int m = strlen(s)+1;
+        int n = strlen(p)+1;
+        vector<vector<int> > table(strlen(s) + 1, vector<int>(strlen(p) + 1, -1));
         return isMatch_Helper(s,p,table,0,0);
         
 
     }
     
-    bool isMatch_Helper(const char *s,const char *p, int[][] table,int i, int j){
+    bool isMatch_Helper(const char *s,const char *p,vector<vector<int> > table,int i, int j){
         if(table[i][j] != -1 )
-            return (table[i][j] == 0)? false;true;
+            return (table[i][j] == 0)? false:true;
         
-        if(p[i] == '\0')
-            return (p[i] == s[j]);
+        if(p[j] == '\0')
+            return (p[j] == s[i]);
 
-        if(p[i] == '*'){
-            while(s[j] != '\0'){
-                if(isMatch_Helper(s,p,table,i,j+1))
+        if(p[j] == '*'){
+            while(s[i] != '\0'){
+                if(isMatch_Helper(s,p,table,i,j+1)){
                     table[i][j] = 1;
+                    return 1;
+                }
                 i++;
             }
-            while(p[i] != '\0'){
-                if(p[i] != '*')
-                    table[i][j] = 0;;
+            while(p[j] != '\0'){
+                if(p[j] != '*'){
+                    table[i][j] = 0;
+                    return 0;
+                }
                 j++;
             }
             table[i][j] = 1;
@@ -53,19 +69,13 @@ public:
         else
             return parse_one(s[i],p[j]) && isMatch_Helper(s,p,table,i+1,j+1);
         
+        return table[i][j];
         
     }
     
    bool parse_one(const char s,const char p){
      if(s != '\0' && (p == '?' || p == s))
-            return true;
-        return false;
+        return true;
+     return false;
    } 
-
-   bool parse_one(const char *s,const char *p){
-        if(*s != '\0' && (*p == '?' || *p == *s))
-            return true;
-        return false;
-
-    }
 };
