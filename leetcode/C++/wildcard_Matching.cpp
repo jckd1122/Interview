@@ -86,19 +86,26 @@ public:
     bool isMatch(const char *s,const char *p){
         int i = 0;
         int j = 0;
+        bool hasStar = false;
 
         while(j < strlen(p)){
             while(i < strlen(s)){
                 if(p[j] == '*'){
+                    hasStar = true;
                     for(int k = 0; k <= strlen(s)-i;++k){
+                        j++;
                         while(i+k < strlen(s) && s[i+k] == p[j]){
                             i++;
                             j++;
                         }
                         if(i+k == strlen(s))
                             return true;
+                            
+                        if(!hasStar)
+                            return false;
                         
-                    }       
+                    }   
+                        
                     
                 }
                 else{
@@ -127,3 +134,5 @@ public:
      return false;
    } 
 };
+    
+  
