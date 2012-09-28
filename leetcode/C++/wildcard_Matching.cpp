@@ -3,7 +3,7 @@ class Solution{
         if(*p = '\0')
             return (*p == *s);
 
-        if(p[0] = '?'){
+        if(p[0] = '*'){
             while(*s != '\0'){
                 if(isMatch(s,p+1))
                     return true;
