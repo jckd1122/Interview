@@ -107,7 +107,12 @@ public:
                     i++;
                     j++;
                 }
-            }    
+            }  
+            while(p[j] != '\0'){
+                if(p[j] != '*')
+                    return false;
+                j++;
+            }
             return j >= strlen(p);
         }
         return i >= strlen(s);       
