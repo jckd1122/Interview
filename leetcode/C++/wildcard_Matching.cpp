@@ -90,13 +90,15 @@ public:
         while(j < strlen(p)){
             while(i < strlen(s)){
                 if(p[j] == '*'){
-                    if(s[i] == p[j]){
-                        i++;
-                        j++;
-                    }
-                    else{
-                        i++;
-                    }
+                    for(int k = 0; k <= strlen(s)-i;++k){
+                        while(i+k < stelen(s) && s[i+k] == p[j]){
+                            i++;
+                            j++;
+                        }
+                        if(i+k == strlen(s))
+                            return true;
+                    }       
+                    
                 }
                 else{
                     if(!parse_one(s[i],p[j]))
