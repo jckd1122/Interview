@@ -24,26 +24,35 @@ public:
     
     //using DP 
     bool isMatch(const char *s,const char *p){
-        bool[][] table = new int[][];
-        if(*p == '\0')
-            return (*p == *s);
+        int[][] table = new int[][];
+        
 
-        if(p[0] == '*'){
-            while(*s != '\0'){
-                if(isMatch(s,p+1))
-                    return true;
-                s++;
+    }
+    
+    bool isMatch_Helper(const char *s,const char *p, int[][] table,int i, int j){
+        if(table[i][j] != -1 )
+            return (table[i][j] == 0)? false;true;
+        
+        if(p[i] == '\0')
+            return (p[i] == s[j]);
+
+        if(p[i] == '*'){
+            while(s[j] != '\0'){
+                if(isMatch_Helper(s,p,table,i,j+1))
+                    table[i][j] = 1;
+                i++;
             }
-            while(*p != '\0'){
-                if(*p != '*')
-                    return false;
-                p++;
+            while(p[i] != '\0'){
+                if(p[i] != '*')
+                    table[i][j] = 0;;
+                j++;
             }
-            return true;
+            table[i][j] = 1;
         }
         else
-            return parse_one(s,p) && isMatch(s+1,p+1);
-
+            return parse_one(s[i],p) && isMatch_Helper(s,p,table,i+1,j+1);
+        
+        
     }
 
    bool parse_one(const char *s,const char *p){
