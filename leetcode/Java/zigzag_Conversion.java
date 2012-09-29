@@ -1,66 +1,26 @@
 public class Solution {
     public String convert(String s, int nRows) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
         String p = "";
-        String q = s;
-        char[][] table = new char[nRows][s.length()/2+2];
-        for(int i = 0; i < nRows;++i){
-            for(int j = 0; j < s.length()/2+2;++j){
-                table[i][j] = ' ';       
-            }
-        }
-        
+        int l = 2*nRows-2;
         if(nRows == 1 || nRows >= s.length())
             return s;
-        if(nRows == 2){
-            for(int j = 0; j < (s.length()/2)+2;++j){
-                for(int i = 0; i < nRows;++i){
-                    
-                    table[i][j] = q.charAt(0);
-                    if(q.length() >= 2)
-                        q = q.substring(1);
-                    
-                }
+            
+        for(int i = 0; i < s.length(); i+=l)
+            p += s.charAt(i);
+        
+        int dist = l-2;
+        for(int i = 1; i < nRows-1;++i,dist-=2){
+            for(int j = i; j < s.length();j+=l){
+                p += s.charAt(j);
+                if(j+dist < s.length())
+                    p += s.charAt(j+dist);
             }
         }
         
-        if(nRows >= 3){
-            int j = 0;
-            while(j < (s.length()/2)+2){
-                if(j %2 == 0){
-                    if(j == 0){
-                        for(int i = 0; i < nRows;++i){
-                            table[i][j] = q.charAt(0);
-                            if(q.length() >= 2)
-                                q = q.substring(1);
-                        }
-                    }
-                    else{
-                        for(int i = nRows-3; i < nRows;++i){
-                            table[i][j] = q.charAt(0);
-                            if(q.length() >= 2)
-                                q = q.substring(1);
-                        }
-                    }
-                }
-                else{
-                   table[nRows-2][j] = q.charAt(0);
-                   if(q.length() >= 2)
-                       q = q.substring(1); 
-                }
-                j++;
-            }
-        }
+        for(int i = nRows-1; i < s.length(); i+=l)
+            p += s.charAt(i);
+            
+        return p;
         
-        for(int i = 0; i < nRows;++i){
-            for(int j = 0; j < s.length()/2+2;++j){
-                if(table[i][j] != ' ')
-                    q = q+table[i][j];
-            }
-        }
-        
-        return q;
-    
     }
 }
