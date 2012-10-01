@@ -1,4 +1,12 @@
 
+给一个 数字串，  比如  12259 , map到 char数组 或者 String.  1 -> a 2-> b,
+...  12 -> l ... 26-> z.
+
+
+12259 ->  lyi  :  abbei  :  lbei : abyi
+
+输入一个数字串，判断是否能转换成 String,如果能，则打印所以有可能的string.
+
 public class num_To_Letters{
     public static void print(String num,String ret,int start){
         if(start == num.length() || num == null){
