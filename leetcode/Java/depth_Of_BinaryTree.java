@@ -26,14 +26,8 @@ public class Solution{
                 node.left.val = height+1;
                 s.push(node.left);
             }
-
-
         }
         return maxHeight;
-
-
-
     }
-
 
 }
