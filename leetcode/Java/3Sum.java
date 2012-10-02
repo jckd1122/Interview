@@ -1,8 +1,8 @@
 import java.util.*;
-
 public class Solution {
      public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
         Arrays.sort(num);
+        ArrayList<ArrayList<Integer>> ret = new ArrayList<ArrayList<Integer>>();
         Set<ArrayList<Integer>> set = new HashSet<ArrayList<Integer>>();
         int Sum = 0;
          for(int i = 0; i < num.length-2;++i){
@@ -15,7 +15,8 @@ public class Solution {
                     ele.add(num[i]);
                     ele.add(num[j]);
                     ele.add(num[k]);
-                    set.add(new ArrayList<Integer>(ele));
+                    if(set.add(new ArrayList<Integer>(ele)))
+                        ret.add(new ArrayList<Integer>(ele));
                     ele.clear();
                     k--;
                     j++;
@@ -26,7 +27,7 @@ public class Solution {
                     j++;
             }
         }
-        return new ArrayList<ArrayList<Integer> >(set);
+        return ret;
         
     }
 }
