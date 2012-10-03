@@ -1,3 +1,5 @@
+//2SUm can use hashtable to solve
+
 import java.util.*;
 public class Solution {
      public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
