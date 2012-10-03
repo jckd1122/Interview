@@ -26,16 +26,11 @@ public class Solution{
                     if(r < ret2)
                         ret2 = r;
                 }
-                else{
+                else
                     return target;
-                }
-           
-           
-            }
+           }
            result = (Math.abs(ret1) < Math.abs(ret2))? ret1:ret2;
            ans = (Math.abs(result) < Math.abs(ans))? result:ans;
-              
-          
       }
       return ans+target;
         
