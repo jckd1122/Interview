@@ -22,7 +22,7 @@ public class Solution {
             Height = node.val;
             if(Height > max_Height)
                 max_Height = Height;
-            if(Height < minHeight && (node.left == null || node.right == null))
+            if(Height < min_Height && (node.left == null || node.right == null))
                 min_Height = Height;
            
             if(node.right != null){
@@ -51,4 +51,5 @@ public class Solution {
             this.max = max;
         }
     }
+
 }
