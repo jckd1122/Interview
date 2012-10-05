@@ -11,7 +11,7 @@
  */
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode l3 = null;
+        ListNode l3 = null;   //could use extra element to assit looping
         ListNode h3 = null;
         int sum,adder = 0;
         
