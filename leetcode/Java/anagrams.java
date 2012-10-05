@@ -2,23 +2,31 @@ import java.util.*;
 
 public class Solution {
     public ArrayList<String> anagrams(String[] strs) {
-       Hashtable<Integer,ArrayList<String>> table = new Hashtable<Integer,ArrayList<String>>();
+       Hashtable<String,ArrayList<String>> table = new Hashtable<String,ArrayList<String>>();
        ArrayList<String> list = new ArrayList<String>();
        for(int i = 0; i < strs.length;++i){
-           //char[] arr = strs[i].toCharArray();
-           //Arrays.sort(arr);
-           int val = RSHash(strs[i]);
+           char[] arr = strs[i].toCharArray();
+           Arrays.sort(arr);
+           String copy = new String(arr);
            
+           
+           if(!table.contains(copy)){
+               table.put(copy,new ArrayList<String>());
+               table.get(copy).add(strs[i]);
+           }
+           else{
+               table.get(copy).add(strs[i]);
+           }
            //ArrayList<String> subList = new ArrayList<String>();
            //subList.add(strs[i]);
-           table.get(val).add(strs[i]);
+           ;
            
        }
        
-       Set<Integer> set = table.keySet();
-       Iterator<Integer> itr = set.iterator();
+       Set<String> set = table.keySet();
+       Iterator<String> itr = set.iterator();
        while (itr.hasNext()){
-          int num = itr.next();
+          String num = itr.next();
           if(table.get(num).size() > 1){
               for(int i = 0 ; i < table.get(num).size();++i)
                   list.add(table.get(num).get(i)); 
@@ -34,9 +42,9 @@ public class Solution {
         int a = 378551;  
         int b = 63689;  
         int hash = 0;  
-        for(int i = 0; i < str.size(); i++)  
+        for(int i = 0; i < str.length(); i++)  
         {  
-            hash = hash * a + str[i];  
+            hash = hash * a + str.charAt(i);  
             a = a * b;  
         }  
         return hash;  
