@@ -1,5 +1,5 @@
 public class Solution {
-    int maxRectangle(int[] arr){
+    int maxRectangle(int[] height){
        Stack<Integer> s = new Stack<Integer>();
        Stack<Integer> ht = new Stack<Integer>();
        if(height.length == 0) return 0;
@@ -42,7 +42,7 @@ public class Solution {
         int n = matrix[0].length;
         int[] arr = new int[n];
         
-        //pre processing
+      
         for(int i = 0; i < m;++i){
             for(int j = 0; j < n;++j){
                 if(matrix[i][j] == '0')
@@ -50,7 +50,7 @@ public class Solution {
                 else
                     arr[j]++; 
             }
-            area = maxRectangle(i,arr);
+            area = maxRectangle(arr);
             areaMax =(area > areaMax)? area:areaMax;
         }
         
