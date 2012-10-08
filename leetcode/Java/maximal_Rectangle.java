@@ -1,6 +1,6 @@
 
-public class Solution {
-    int maxRectangle(int x,int[][] arr){
+public class maximal_Rectangle {
+    static int maxRectangle(int x,int[][] arr){
         int l = 0;
         int r = arr[x].length-1;
         int height,width = 0;
@@ -21,7 +21,7 @@ public class Solution {
     
     }
     
-    public int maximalRectangle(char[][] matrix) {
+    public static int maximalRectangle(char[][] matrix) {
         int area,areaMax = 0;
         int m = matrix.length;
         if(m == 0) return 0;
@@ -46,12 +46,18 @@ public class Solution {
         
         for(int i = 1; i < m;++i){
             area = maxRectangle(i,arr);
+            System.out.println(area);
             areaMax =(area > areaMax)? area:areaMax;
         }
         return areaMax;
     }
     
-    
+    public static void main(String[] args){
+        char[][] matrix = {{0,0,1,0},{1,1,1,1},{1,1,1,1},{1,1,1,0}};
+        
+        System.out.println(maximalRectangle(matrix));
+
+    }
     
     
 }
