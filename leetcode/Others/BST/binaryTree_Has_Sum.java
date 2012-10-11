@@ -6,10 +6,10 @@ public class binaryTree_Has_Sum{
             return root.val == sum;
         
         
-        if(root.left != null)
-            return hasSum(root.left,sum-root.val);
-        if(root.right != null)
+        if(root.left == null)
             return hasSum(root.right,sum-root.val);
+        if(root.right != null)
+            return hasSum(root.left,sum-root.val);
         
         return hasSum(root.left,sum-root.val) || hasSum(root.right,sum-root.val);
 
