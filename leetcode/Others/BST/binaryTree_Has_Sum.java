@@ -1,12 +1,12 @@
+import java.util.*;
+
 public class binaryTree_Has_Sum{
     public static boolean hasSum(Node root,int sum){
         if(root == null)
             return (sum == 0);
         
-        if(root.left != null)
-            return hasSum(root.left,sum-root.val);
-        if(root.right != null)
-            return hasSum(root.right,sum-root.val);
+        
+        return hasSum(root.left,sum-root.val) || hasSum(root.right,sum-root.val);
     }
     
     
@@ -28,16 +28,31 @@ public class binaryTree_Has_Sum{
            return; 
        }
         
-        if(root.left != null){
-            path.add(root.val);
-            printPath_Helper(root.left,sum-root.val,list,path);
-        }
-        path.remove(path.size()-1);
-        if(root.right != null){
-            path.add(root.val);
-            printPath_Helper(root.right,sum-root.val,list,path);
-        }
         
+        path.add(root.val);
+        printPath_Helper(root.left,sum-root.val,list,path);
+        path.remove(path.size()-1);
+        
+        
+        
+        path.add(root.val);
+        printPath_Helper(root.right,sum-root.val,list,path);
+        
+        
+    }
+
+    public static void main(String[] args){
+       int[] arr = {1,2,3,4,5,6,7,8,9};
+       Node root = Node.arrayToBST(arr,0,8);
+       System.out.println(hasSum(root,14));
+       ArrayList<ArrayList<Integer>> list = printPath(root,14);
+       for(ArrayList<Integer> ele : list){
+           for(int num:ele)
+               System.out.print(num+" ");
+           System.out.println();
+
+       }
+
     }
 
 
