@@ -1,1 +1,1 @@
-public class binar
+dsapublic class binar
