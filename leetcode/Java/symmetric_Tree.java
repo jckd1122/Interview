@@ -1,4 +1,5 @@
 public class Solution {
+    //iterative
     public boolean isSymmetric(TreeNode root) {
         if(root == null)
             return true;
@@ -34,4 +35,26 @@ public class Solution {
         }
         return true;
     }
+
+    //recursion
+        if(root == null)
+            return true;
+         return helper(root.left,root.right);
+         
+    }
+    
+    public boolean helper(TreeNode Node1,TreeNode Node2){
+         if((Node1 == null)^(Node2 == null))
+            return false;
+         
+         if(Node1 != null && Node2 != null){
+             return (Node1.val == Node2.val) && helper(Node1.left,Node2.right) && helper(Node1.right,Node2.left);
+             
+         }
+         return true;
+        
+    }
+
+
+
 }
