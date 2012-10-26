@@ -33,9 +33,9 @@ public class Solution {
         
         }
             
-        else if(x == -1 && y >= 0)
+        else if(y >= 0)
             intervals.remove(y);
-        else if(y == -1 && x >= 0)
+        else if(x >= 0)
             intervals.remove(x);
         else {
             
@@ -46,7 +46,7 @@ public class Solution {
             }
         }
         if(intervals.size() == 0)
-            x = 0;
+           x = 0;
         intervals.add(x, new Interval(lo,hi));
 
         return intervals;
