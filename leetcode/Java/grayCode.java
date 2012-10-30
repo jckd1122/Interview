@@ -6,8 +6,7 @@ public class Solution {
         for(int i = 1; i <= n;++i){
             int s = list.size();
             for(int j = list.size()-1; j >= 0;--j){
-                int num = list.get(j);
-                list.add(num+s);
+                list.add(list.get(j)+s);
             }
         }
         return list; 
