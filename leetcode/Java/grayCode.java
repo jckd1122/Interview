@@ -1,18 +1,16 @@
-import java.lang.Math;
-
-public class grayCode{
-    public static ArrayList<Integer> code(int n){
+public class Solution {
+    public ArrayList<Integer> grayCode(int n) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(0);
         
         for(int i = 1; i <= n;++i){
-            for(int j = 1; j <= list.size();++j){
-                int num = list.get(list.size()-j);
-                list.add(num+list.size());
+            int s = list.size();
+            for(int j = list.size()-1; j >= 0;--j){
+                int num = list.get(j);
+                list.add(num+s);
             }
         }
         return list; 
     }
-
 
 }
