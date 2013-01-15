@@ -1,6 +1,6 @@
 //be careful about the difference between with permutation and combination
 //permuation , depth is increased based on pos value
-//oombination, depth is increased based on i value
+//combination, depth is increased based on i value
 
 import java.util.*;
 public class Solution{
