@@ -14,21 +14,21 @@ public:
             if(s[i] == '{')
                 v.push_back(s[i]);
             if(s[i] == ')'){
-                if(v[v.size()-1] != '('
+                if(v.size() == 0 || v[v.size()-1] != '(')
                     return false;
-                a.pop_back();
+                v.pop_back();
             }
             if(s[i] == ']'){
-                if(v[v.size()-1] != '['
+                if(v.size() == 0 || v[v.size()-1] != '[')
                     return false;
-                a.pop_back();
+                v.pop_back();
             }
             if(s[i] == '}'){
-                if(v[v.size()-1] != '{'
+                if(v.size() == 0 || v[v.size()-1] != '{')
                     return false;
-                a.pop_back();
+                v.pop_back();
             }
         }
-        return (a.size() == 0 && b.size() == 0 )&& (c.size() == 0);
+        return (v.size() == 0);
     }
 };
